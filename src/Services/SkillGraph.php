@@ -138,8 +138,9 @@ class SkillGraph
         $studentSkill->last_attempted_at = now();
 
         // Weighted moving average — recent attempts matter more
+        // Converges quickly: 2 scores of 90+ → mastery
         $studentSkill->mastery = round(
-            ($studentSkill->mastery * 0.6) + ($score * 0.4),
+            ($studentSkill->mastery * 0.3) + ($score * 0.7),
             2
         );
 
