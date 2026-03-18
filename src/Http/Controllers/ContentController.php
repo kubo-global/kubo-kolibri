@@ -117,6 +117,31 @@ class ContentController extends Controller
     }
 
     /**
+     * Server-side proxy for checking Kolibri exercise completion.
+     * Avoids CORS issues — the browser polls this KUBO endpoint,
+     * KUBO's server checks Kolibri's API.
+     */
+    public function checkProgress(Request $request, KolibriClient $client, string $nodeId)
+    {
+        $user = $request->user();
+        $kolibriUserId = $user->kolibri_user_id;
+
+        if (!$kolibriUserId) {
+            return response()->json(['complete' => false]);
+        }
+
+        $logs = $client->getProgressForUser($kolibriUserId, [$nodeId]);
+
+        foreach ($logs as $log) {
+            if (($log['progress'] ?? 0) >= 1.0 || ($log['complete'] ?? false)) {
+                return response()->json(['complete' => true]);
+            }
+        }
+
+        return response()->json(['complete' => false]);
+    }
+
+    /**
      * Delete a curriculum mapping.
      */
     public function deleteMapping(int $mapId)

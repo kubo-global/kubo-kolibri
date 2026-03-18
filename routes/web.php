@@ -13,6 +13,10 @@ Route::prefix('kolibri')->middleware(['web', 'auth'])->group(function () {
     Route::get('go/{nodeId}', [ContentController::class, 'redirect'])
         ->name('kolibri.redirect');
 
+    // Server-side progress check (avoids CORS)
+    Route::get('progress/{nodeId}', [ContentController::class, 'checkProgress'])
+        ->name('kolibri.check-progress');
+
     // Adaptive engine: next exercise for student
     Route::get('next/{subjectId}/{topicId}', [ContentController::class, 'nextExercise'])
         ->name('kolibri.next-exercise');
