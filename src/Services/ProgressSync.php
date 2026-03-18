@@ -2,6 +2,7 @@
 
 namespace KuboKolibri\Services;
 
+use App\Models\User;
 use KuboKolibri\Client\KolibriClient;
 use KuboKolibri\Models\ContentProgress;
 use KuboKolibri\Models\CurriculumMap;
@@ -62,8 +63,9 @@ class ProgressSync
 
     /**
      * Sync progress for all students in a class (offering).
+     * Uses kolibri_user_id stored on the users table.
      */
-    public function syncForOffering(int $offeringId, callable $kolibriUserIdResolver): int
+    public function syncForOffering(int $offeringId, ?callable $kolibriUserIdResolver = null): int
     {
         $enrollments = \App\Models\Enrollment::where('offering_id', $offeringId)
             ->with('student')
@@ -71,7 +73,17 @@ class ProgressSync
 
         $total = 0;
         foreach ($enrollments as $enrollment) {
-            $kolibriUserId = $kolibriUserIdResolver($enrollment->user_id);
+            $student = $enrollment->student;
+            if (!$student) {
+                continue;
+            }
+
+            // Use stored kolibri_user_id, or fall back to resolver
+            $kolibriUserId = $student->kolibri_user_id;
+            if (!$kolibriUserId && $kolibriUserIdResolver) {
+                $kolibriUserId = $kolibriUserIdResolver($enrollment->user_id);
+            }
+
             if ($kolibriUserId) {
                 $total += $this->syncForStudent($enrollment->user_id, $kolibriUserId);
             }

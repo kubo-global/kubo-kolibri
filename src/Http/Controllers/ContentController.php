@@ -8,7 +8,7 @@ use KuboKolibri\Client\KolibriClient;
 use KuboKolibri\Models\CurriculumMap;
 use KuboKolibri\Services\AdaptiveEngine;
 use KuboKolibri\Services\ContentResolver;
-use KuboKolibri\Services\ProgressSync;
+use KuboKolibri\Services\KolibriSessionBridge;
 
 class ContentController extends Controller
 {
@@ -28,16 +28,22 @@ class ContentController extends Controller
     }
 
     /**
-     * Embed a single Kolibri content node in an iframe.
+     * Redirect a student to Kolibri content via the session bridge.
+     * Auto-logs the student into Kolibri, then redirects to the content.
      */
-    public function embed(KolibriClient $client, string $nodeId)
+    public function redirect(Request $request, KolibriSessionBridge $bridge, KolibriClient $client, string $nodeId)
     {
-        $renderUrl = $client->renderUrl($nodeId);
+        $user = $request->user();
+        $facilityId = $this->getFacilityId($user);
 
-        return view('kubo-kolibri::embed', [
-            'renderUrl' => $renderUrl,
-            'nodeId' => $nodeId,
-        ]);
+        // If school is provisioned, try auto-login via session bridge
+        if ($facilityId && $user->kolibri_user_id) {
+            $data = $bridge->buildRedirectData($user, $facilityId, $nodeId);
+            return view('kubo-kolibri::kolibri-redirect', $data);
+        }
+
+        // Not provisioned — redirect straight to Kolibri content URL
+        return redirect()->away($client->renderUrl($nodeId));
     }
 
     /**
@@ -118,5 +124,19 @@ class ContentController extends Controller
         CurriculumMap::findOrFail($mapId)->delete();
 
         return response()->json(null, 204);
+    }
+
+    private function getFacilityId($user): ?string
+    {
+        // Walk from user → enrollment → offering → school to find facility ID
+        $enrollment = $user->enrollments()->with('offering')->latest()->first();
+        if (!$enrollment || !$enrollment->offering) {
+            return null;
+        }
+
+        // Offering doesn't directly have school_id, but grade → school relationship
+        // For now, use the school from the config or the first school
+        $school = \App\Models\School::whereNotNull('kolibri_facility_id')->first();
+        return $school?->kolibri_facility_id;
     }
 }

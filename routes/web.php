@@ -9,9 +9,9 @@ Route::prefix('kolibri')->middleware(['web', 'auth'])->group(function () {
     Route::get('content/{subjectId}/{topicId}', [ContentController::class, 'forTopic'])
         ->name('kolibri.topic-content');
 
-    // Embed a single content node
-    Route::get('embed/{nodeId}', [ContentController::class, 'embed'])
-        ->name('kolibri.embed');
+    // Redirect to Kolibri content (auto-login + redirect)
+    Route::get('go/{nodeId}', [ContentController::class, 'redirect'])
+        ->name('kolibri.redirect');
 
     // Adaptive engine: next exercise for student
     Route::get('next/{subjectId}/{topicId}', [ContentController::class, 'nextExercise'])

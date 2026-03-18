@@ -4,6 +4,9 @@ namespace KuboKolibri;
 
 use Illuminate\Support\ServiceProvider;
 use KuboKolibri\Client\KolibriClient;
+use KuboKolibri\Console\SyncProgressCommand;
+use KuboKolibri\Services\KolibriProvisioner;
+use KuboKolibri\Services\KolibriSessionBridge;
 
 class KuboKolibriServiceProvider extends ServiceProvider
 {
@@ -19,6 +22,20 @@ class KuboKolibriServiceProvider extends ServiceProvider
                 $config['kolibri_password'],
             );
         });
+
+        $this->app->singleton(KolibriProvisioner::class, function ($app) {
+            return new KolibriProvisioner(
+                $app->make(KolibriClient::class),
+                $app['config']['kubo-kolibri.learner_password_secret'],
+            );
+        });
+
+        $this->app->singleton(KolibriSessionBridge::class, function ($app) {
+            return new KolibriSessionBridge(
+                $app->make(KolibriClient::class),
+                $app->make(KolibriProvisioner::class),
+            );
+        });
     }
 
     public function boot(): void
@@ -31,6 +48,10 @@ class KuboKolibriServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/Config/kubo-kolibri.php' => config_path('kubo-kolibri.php'),
             ], 'kubo-kolibri-config');
+
+            $this->commands([
+                SyncProgressCommand::class,
+            ]);
         }
     }
 }

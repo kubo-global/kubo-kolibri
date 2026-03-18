@@ -125,6 +125,54 @@ class KolibriClient
     }
 
     // =========================================================================
+    // Provisioning
+    // =========================================================================
+
+    public function createFacility(string $name): ?array
+    {
+        return $this->post('/api/auth/facility/', [
+            'name' => $name,
+        ]);
+    }
+
+    public function createClassroom(string $facilityId, string $name): ?array
+    {
+        return $this->post('/api/auth/classroom/', [
+            'name' => $name,
+            'parent' => $facilityId,
+        ]);
+    }
+
+    public function createLearner(string $facilityId, string $username, string $fullName, string $password): ?array
+    {
+        return $this->post('/api/auth/facilityuser/', [
+            'username' => $username,
+            'full_name' => $fullName,
+            'password' => $password,
+            'facility' => $facilityId,
+        ]);
+    }
+
+    public function addToClassroom(string $userId, string $classroomId): ?array
+    {
+        return $this->post('/api/auth/membership/', [
+            'user' => $userId,
+            'collection' => $classroomId,
+        ]);
+    }
+
+    public function createLesson(string $classroomId, string $title, array $resources, string $createdBy): ?array
+    {
+        return $this->post('/api/lessons/lesson/', [
+            'title' => $title,
+            'collection' => $classroomId,
+            'resources' => $resources,
+            'created_by' => $createdBy,
+            'is_active' => true,
+        ]);
+    }
+
+    // =========================================================================
     // Progress & Attempt Logs
     // =========================================================================
 
@@ -158,12 +206,22 @@ class KolibriClient
     }
 
     // =========================================================================
-    // Content Rendering URL
+    // URLs
     // =========================================================================
+
+    public function getBaseUrl(): string
+    {
+        return $this->baseUrl;
+    }
 
     public function renderUrl(string $nodeId): string
     {
         return "{$this->baseUrl}/learn/#/topics/c/{$nodeId}";
+    }
+
+    public function sessionApiUrl(): string
+    {
+        return "{$this->baseUrl}/api/auth/session/";
     }
 
     // =========================================================================
@@ -197,6 +255,21 @@ class KolibriClient
             return collect($data);
         } catch (GuzzleException $e) {
             return collect();
+        }
+    }
+
+    private function post(string $path, array $data = []): ?array
+    {
+        try {
+            $options = ['json' => $data];
+            if ($this->token) {
+                $options['headers']['Authorization'] = "Token {$this->token}";
+            }
+
+            $response = $this->http->post($path, $options);
+            return json_decode($response->getBody()->getContents(), true);
+        } catch (GuzzleException $e) {
+            return null;
         }
     }
 }
