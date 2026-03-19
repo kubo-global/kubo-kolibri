@@ -129,11 +129,15 @@ class KolibriProvisioner
      */
     public function assignContent(string $classroomId, string $title, array $nodeIds, string $createdBy): ?array
     {
-        $resources = collect($nodeIds)->map(fn ($nodeId, $i) => [
-            'contentnode_id' => $nodeId,
-            'content_id' => $nodeId,
-            'order' => $i,
-        ])->values()->toArray();
+        $resources = collect($nodeIds)->map(function ($nodeId, $i) {
+            $node = $this->client->getContentNode($nodeId);
+            return [
+                'contentnode_id' => $nodeId,
+                'content_id' => $node['content_id'] ?? $nodeId,
+                'channel_id' => $node['channel_id'] ?? '',
+                'order' => $i,
+            ];
+        })->values()->toArray();
 
         return $this->client->createLesson($classroomId, $title, $resources, $createdBy);
     }

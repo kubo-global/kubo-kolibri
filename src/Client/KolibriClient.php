@@ -10,7 +10,7 @@ class KolibriClient
 {
     private Client $http;
     private string $baseUrl;
-    private ?string $token = null;
+    private ?string $csrfToken = null;
 
     public function __construct(string $baseUrl, string $username, string $password)
     {
@@ -18,6 +18,7 @@ class KolibriClient
         $this->http = new Client([
             'base_uri' => $this->baseUrl,
             'timeout' => 10,
+            'cookies' => true,
         ]);
 
         if ($username && $password) {
@@ -32,7 +33,7 @@ class KolibriClient
     private function authenticate(string $username, string $password): void
     {
         try {
-            $response = $this->http->post('/api/auth/session/', [
+            $this->http->post('/api/auth/session/', [
                 'json' => [
                     'username' => $username,
                     'password' => $password,
@@ -40,10 +41,16 @@ class KolibriClient
                 ],
             ]);
 
-            $data = json_decode($response->getBody()->getContents(), true);
-            $this->token = $data['token'] ?? null;
+            // Extract CSRF token from cookies (Kolibri uses kolibri_csrftoken)
+            $cookieJar = $this->http->getConfig('cookies');
+            foreach ($cookieJar as $cookie) {
+                if (str_contains($cookie->getName(), 'csrf')) {
+                    $this->csrfToken = $cookie->getValue();
+                    break;
+                }
+            }
         } catch (GuzzleException $e) {
-            // Auth failed — client will work without token for public endpoints
+            // Auth failed — client will work without auth for public endpoints
         }
     }
 
@@ -161,6 +168,11 @@ class KolibriClient
         ]);
     }
 
+    public function deleteLesson(string $lessonId): void
+    {
+        $this->delete("/api/lessons/lesson/{$lessonId}/");
+    }
+
     public function createLesson(string $classroomId, string $title, array $resources, string $createdBy): ?array
     {
         return $this->post('/api/lessons/lesson/', [
@@ -235,10 +247,6 @@ class KolibriClient
             if (!empty($params)) {
                 $options['query'] = $params;
             }
-            if ($this->token) {
-                $options['headers']['Authorization'] = "Token {$this->token}";
-            }
-
             $response = $this->http->get($path, $options);
             $data = json_decode($response->getBody()->getContents(), true);
 
@@ -262,14 +270,33 @@ class KolibriClient
     {
         try {
             $options = ['json' => $data];
-            if ($this->token) {
-                $options['headers']['Authorization'] = "Token {$this->token}";
+            if ($this->csrfToken) {
+                $options['headers']['X-CSRFToken'] = $this->csrfToken;
             }
 
             $response = $this->http->post($path, $options);
             return json_decode($response->getBody()->getContents(), true);
         } catch (GuzzleException $e) {
+            \Illuminate\Support\Facades\Log::warning('Kolibri POST failed', [
+                'path' => $path,
+                'status' => method_exists($e, 'getResponse') && $e->getResponse() ? $e->getResponse()->getStatusCode() : null,
+                'body' => method_exists($e, 'getResponse') && $e->getResponse() ? $e->getResponse()->getBody()->getContents() : $e->getMessage(),
+            ]);
             return null;
+        }
+    }
+
+    private function delete(string $path): void
+    {
+        try {
+            $options = [];
+            if ($this->csrfToken) {
+                $options['headers']['X-CSRFToken'] = $this->csrfToken;
+            }
+
+            $this->http->delete($path, $options);
+        } catch (GuzzleException $e) {
+            // Ignore — lesson may already be deleted
         }
     }
 }

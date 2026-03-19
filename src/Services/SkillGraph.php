@@ -95,12 +95,17 @@ class SkillGraph
      * These are skills whose prerequisites are all mastered
      * but the skill itself is not yet mastered.
      */
-    public function readySkills(int $userId, int $subjectId): Collection
+    public function readySkills(int $userId, int $subjectId, ?int $gradeId = null): Collection
     {
-        $skills = Skill::where('subject_id', $subjectId)
+        $query = Skill::where('subject_id', $subjectId)
             ->with('prerequisites')
-            ->orderBy('level')
-            ->get();
+            ->orderBy('level');
+
+        if ($gradeId) {
+            $query->where('grade_id', $gradeId);
+        }
+
+        $skills = $query->get();
 
         $masteredIds = StudentSkill::forStudent($userId)
             ->mastered()
@@ -177,7 +182,7 @@ class SkillGraph
             ->toArray();
 
         $mastered = $skills->filter(fn ($s) => in_array($s->id, $masteredIds));
-        $frontier = $this->readySkills($userId, $subjectId);
+        $frontier = $this->readySkills($userId, $subjectId, $gradeId);
         $ahead = $skills->reject(fn ($s) => in_array($s->id, $masteredIds))
             ->reject(fn ($s) => $frontier->contains('id', $s->id));
 
