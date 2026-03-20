@@ -245,6 +245,7 @@ class ProxyController extends Controller
         return <<<'JS'
 (function() {
     var proxyBase = '/kolibri-proxy';
+    var lastComplete = false;
 
     function shouldRewrite(url) {
         if (typeof url !== 'string') return false;
@@ -299,6 +300,13 @@ class ProxyController extends Controller
                     type: 'kubo-exercise-progress',
                     lastCorrect: correct >= 1
                 }, '*');
+                // Notify on first-time completion (transition from incomplete → complete).
+                // Only check on PUT (answer submitted), not POST (session created).
+                // POST sets lastComplete to the initial state without firing.
+                if (method === 'PUT' && data.complete && !lastComplete) {
+                    window.parent.postMessage({ type: 'kubo-exercise-complete' }, '*');
+                }
+                lastComplete = !!data.complete;
             }).catch(function() {});
         }
 
@@ -329,6 +337,10 @@ class ProxyController extends Controller
                     lastCorrect: (last.correct || 0) >= 1
                 }, '*');
             }
+            if (xhr._kuboMethod === 'PUT' && data.complete && !lastComplete) {
+                window.parent.postMessage({ type: 'kubo-exercise-complete' }, '*');
+            }
+            lastComplete = !!data.complete;
         } catch(e) {}
     }
 
@@ -393,11 +405,11 @@ header[role="banner"],
     display: none !important;
 }
 
-/* Hide "Completed" badge and mastery indicators from previous sessions */
+/* Hide mastery indicators from previous sessions.
+   Note: CompletionModal is NOT hidden here — exercise.blade.php's
+   completion polling needs innerText to detect "Stay and practice". */
 [class*="MasteryModel"],
 [class*="mastery-model"],
-[class*="CompletionModal"],
-[class*="completion-modal"],
 [class*="PointsPopover"],
 [class*="StatusIcon"][class*="correct"],
 .content-icon svg.complete-icon,
