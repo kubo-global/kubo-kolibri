@@ -3,10 +3,32 @@
 namespace KuboKolibri\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use KuboKolibri\Client\KolibriClient;
 
 class CurriculumMap extends Model
 {
     protected $guarded = [];
+
+    /**
+     * Lazily resolve and cache the Kolibri content_id from the node_id.
+     */
+    public function resolveContentId(KolibriClient $client): ?string
+    {
+        if ($this->kolibri_content_id) {
+            return $this->kolibri_content_id;
+        }
+
+        $node = $client->getContentNode($this->kolibri_node_id);
+
+        if (!$node || empty($node['content_id'])) {
+            return null;
+        }
+
+        $this->kolibri_content_id = $node['content_id'];
+        $this->save();
+
+        return $this->kolibri_content_id;
+    }
 
     public function school()
     {

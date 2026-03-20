@@ -209,6 +209,55 @@ class KolibriClient
         ]);
     }
 
+    /**
+     * Fetch exercise scores from Kolibri's attempt logs for a specific user/content,
+     * filtered to attempts since a given timestamp.
+     *
+     * @return array{total_questions: int, correct_answers: int, wrong_answers: int, score: float}
+     */
+    public function fetchExerciseScore(string $userId, string $contentId, \DateTimeInterface $since): array
+    {
+        $attempts = $this->getAttemptLogs($userId, $contentId);
+
+        $sinceUnix = $since->getTimestamp();
+
+        $filtered = $attempts->filter(function ($attempt) use ($sinceUnix) {
+            $ts = $attempt['start_timestamp'] ?? '';
+            if (!$ts) return false;
+            try {
+                return (new \DateTimeImmutable($ts))->getTimestamp() >= $sinceUnix;
+            } catch (\Exception $e) {
+                return false;
+            }
+        });
+
+        $total = $filtered->count();
+        $correct = $filtered->filter(fn ($a) => ($a['correct'] ?? 0) == 1)->count();
+        $wrong = $total - $correct;
+
+        return [
+            'total_questions' => $total,
+            'correct_answers' => $correct,
+            'wrong_answers' => $wrong,
+            'score' => $total > 0 ? round(($correct / $total) * 100, 2) : 0,
+        ];
+    }
+
+    public function getAllAttemptLogs(string $contentId): Collection
+    {
+        return $this->get('/api/logger/attemptlog/', [
+            'content' => $contentId,
+        ]);
+    }
+
+    public function getContentSessionLogs(string $userId, string $contentId): Collection
+    {
+        return $this->get('/api/logger/contentsessionlog/', [
+            'user_id' => $userId,
+            'content_id' => $contentId,
+        ]);
+    }
+
     public function getMasteryLogs(string $userId, string $contentId): Collection
     {
         return $this->get('/api/logger/masterylog/', [
@@ -231,9 +280,19 @@ class KolibriClient
         return "{$this->baseUrl}/learn/#/topics/c/{$nodeId}";
     }
 
+    public function proxyRenderUrl(string $nodeId): string
+    {
+        return "/kolibri-proxy/learn/#/topics/c/{$nodeId}";
+    }
+
     public function sessionApiUrl(): string
     {
         return "{$this->baseUrl}/api/auth/session/";
+    }
+
+    public function proxySessionApiUrl(): string
+    {
+        return "/kolibri-proxy/api/auth/session/";
     }
 
     // =========================================================================
