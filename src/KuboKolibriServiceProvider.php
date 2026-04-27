@@ -4,10 +4,13 @@ namespace KuboKolibri;
 
 use Illuminate\Support\ServiceProvider;
 use KuboKolibri\Client\KolibriClient;
+use KuboKolibri\Console\GenerateChannelCommand;
 use KuboKolibri\Console\SyncProgressCommand;
+use KuboKolibri\Services\ChannelGenerator;
 use KuboKolibri\Services\ExerciseRunService;
 use KuboKolibri\Services\KolibriProvisioner;
 use KuboKolibri\Services\KolibriSessionBridge;
+use KuboKolibri\Services\PerseusGenerator;
 use KuboKolibri\Services\SkillGraph;
 
 class KuboKolibriServiceProvider extends ServiceProvider
@@ -45,6 +48,13 @@ class KuboKolibriServiceProvider extends ServiceProvider
                 $app->make(SkillGraph::class),
             );
         });
+
+        $this->app->singleton(ChannelGenerator::class, function ($app) {
+            return new ChannelGenerator(
+                new PerseusGenerator(),
+                $app['config']['kubo-kolibri.kolibri_content_path'],
+            );
+        });
     }
 
     public function boot(): void
@@ -60,6 +70,7 @@ class KuboKolibriServiceProvider extends ServiceProvider
 
             $this->commands([
                 SyncProgressCommand::class,
+                GenerateChannelCommand::class,
             ]);
         }
     }

@@ -51,4 +51,15 @@ return [
     */
     'sync_interval' => env('KOLIBRI_SYNC_INTERVAL', 5),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Kolibri Content Path
+    |--------------------------------------------------------------------------
+    |
+    | Filesystem path to Kolibri's content directory. Channel databases
+    | and Perseus exercise files are written here by the channel generator.
+    |
+    */
+    'kolibri_content_path' => env('KOLIBRI_CONTENT_PATH', rtrim(env('HOME', '/var/lib/kolibri'), '/') . '/.kolibri/content'),
+
 ];
