@@ -2,6 +2,7 @@
 
 namespace KuboKolibri\Services;
 
+use App\Models\School;
 use App\Models\User;
 use KuboKolibri\Client\KolibriClient;
 
@@ -44,6 +45,34 @@ class KolibriSessionBridge
             'username' => $this->provisioner->kolibriUsername($user),
             'password' => $this->provisioner->kolibriPassword($user),
             'content_url' => $this->client->renderUrl($contentNodeId),
+        ];
+    }
+
+    /**
+     * Auto-provision a student and build proxy-based session data for the exercise page.
+     *
+     * Handles the full lifecycle: find Kolibri school, provision if needed,
+     * return content URL and optional login credentials.
+     */
+    public function exerciseSessionData(User $user, string $contentNodeId): array
+    {
+        $school = School::whereNotNull('kolibri_facility_id')->first();
+        $kolibriReady = false;
+
+        if ($school?->kolibri_facility_id) {
+            if (!$user->kolibri_user_id) {
+                $this->provisioner->provisionLearner($user, $school->kolibri_facility_id);
+                $user->refresh();
+            }
+            $kolibriReady = (bool) $user->kolibri_user_id;
+        }
+
+        return [
+            'contentUrl' => $this->client->proxyRenderUrl($contentNodeId),
+            'sessionUrl' => $kolibriReady ? $this->client->proxySessionApiUrl() : null,
+            'facilityId' => $kolibriReady ? $school->kolibri_facility_id : null,
+            'kolibriUsername' => $kolibriReady ? $this->provisioner->kolibriUsername($user) : null,
+            'kolibriPassword' => $kolibriReady ? $this->provisioner->kolibriPassword($user) : null,
         ];
     }
 }

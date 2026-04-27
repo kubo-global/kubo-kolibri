@@ -2,6 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use KuboKolibri\Http\Controllers\ContentController;
+use KuboKolibri\Http\Controllers\ProxyController;
+
+// Kolibri reverse proxy — same-origin iframe access
+Route::any('kolibri-proxy/{path?}', [ProxyController::class, 'proxy'])
+    ->where('path', '.*')
+    ->middleware(['web', 'auth'])
+    ->name('kolibri.proxy');
 
 Route::prefix('kolibri')->middleware(['web', 'auth'])->group(function () {
 
