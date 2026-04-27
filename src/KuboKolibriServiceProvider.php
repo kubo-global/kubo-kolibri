@@ -5,8 +5,10 @@ namespace KuboKolibri;
 use Illuminate\Support\ServiceProvider;
 use KuboKolibri\Client\KolibriClient;
 use KuboKolibri\Console\SyncProgressCommand;
+use KuboKolibri\Services\ExerciseRunService;
 use KuboKolibri\Services\KolibriProvisioner;
 use KuboKolibri\Services\KolibriSessionBridge;
+use KuboKolibri\Services\SkillGraph;
 
 class KuboKolibriServiceProvider extends ServiceProvider
 {
@@ -34,6 +36,13 @@ class KuboKolibriServiceProvider extends ServiceProvider
             return new KolibriSessionBridge(
                 $app->make(KolibriClient::class),
                 $app->make(KolibriProvisioner::class),
+            );
+        });
+
+        $this->app->singleton(ExerciseRunService::class, function ($app) {
+            return new ExerciseRunService(
+                $app->make(KolibriClient::class),
+                $app->make(SkillGraph::class),
             );
         });
     }
