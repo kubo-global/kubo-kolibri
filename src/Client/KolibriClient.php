@@ -173,15 +173,22 @@ class KolibriClient
         $this->delete("/api/lessons/lesson/{$lessonId}/");
     }
 
-    public function createLesson(string $classroomId, string $title, array $resources, string $createdBy): ?array
+    public function createLesson(string $classroomId, string $title, array $resources, string $createdBy, array $learnerIds = []): ?array
     {
-        return $this->post('/api/lessons/lesson/', [
+        $payload = [
             'title' => $title,
             'collection' => $classroomId,
             'resources' => $resources,
             'created_by' => $createdBy,
             'is_active' => true,
-        ]);
+        ];
+
+        if (!empty($learnerIds)) {
+            $payload['learner_ids'] = $learnerIds;
+            $payload['assigned_kind'] = 'individual';
+        }
+
+        return $this->post('/api/lessons/lesson/', $payload);
     }
 
     // =========================================================================

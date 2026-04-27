@@ -38,7 +38,7 @@ return [
     | IMPORTANT: Change this from the default in production.
     |
     */
-    'learner_password_secret' => env('KOLIBRI_LEARNER_SECRET', 'kubo-kolibri-default-secret'),
+    'learner_password_secret' => env('KOLIBRI_LEARNER_SECRET', ''),
 
     /*
     |--------------------------------------------------------------------------

@@ -16,6 +16,10 @@ class KolibriProvisioner
     {
         $this->client = $client;
         $this->passwordSecret = $passwordSecret;
+
+        if (empty($passwordSecret)) {
+            \Illuminate\Support\Facades\Log::warning('KOLIBRI_LEARNER_SECRET is not set. Set it in .env for secure learner passwords.');
+        }
     }
 
     /**
@@ -127,7 +131,11 @@ class KolibriProvisioner
     /**
      * Assign content to a Kolibri classroom as a lesson.
      */
-    public function assignContent(string $classroomId, string $title, array $nodeIds, string $createdBy): ?array
+    /**
+     * Assign content to a Kolibri classroom as a lesson.
+     * Pass $learnerKolibriIds to target specific students (Kolibri user IDs).
+     */
+    public function assignContent(string $classroomId, string $title, array $nodeIds, string $createdBy, array $learnerKolibriIds = []): ?array
     {
         $resources = collect($nodeIds)->map(function ($nodeId, $i) {
             $node = $this->client->getContentNode($nodeId);
@@ -139,7 +147,7 @@ class KolibriProvisioner
             ];
         })->values()->toArray();
 
-        return $this->client->createLesson($classroomId, $title, $resources, $createdBy);
+        return $this->client->createLesson($classroomId, $title, $resources, $createdBy, $learnerKolibriIds);
     }
 
     /**
