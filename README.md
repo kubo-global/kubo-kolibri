@@ -112,6 +112,49 @@ The missing piece has always been the bridge.
 - **Content rendering**: Kolibri's built-in renderers served via iframe in KUBO's Blade/Vue templates
 - **Progress sync**: Cron or event-driven polling of Kolibri's progress API
 
+## Setup & Operations
+
+The bridge talks to Kolibri over HTTP using the credentials in your KUBO `.env`:
+
+```
+KOLIBRI_URL=http://localhost:8080
+KOLIBRI_USERNAME=<kolibri superuser>
+KOLIBRI_PASSWORD=<their password>
+KOLIBRI_LEARNER_SECRET=<random string for derived learner passwords>
+```
+
+Different Kolibri installs end up with different device settings depending on
+how the setup wizard was run (server mode vs. app mode, whether a
+`DeviceSettings` row exists, etc.). To keep that drift out of day-to-day
+concerns, run:
+
+```
+php artisan kolibri:reconcile
+```
+
+It checks that Kolibri is reachable, that there is exactly one facility, and
+that the `.env` admin can log in over HTTP. If login already works, it is a
+no-op — three HTTP calls and done. If login fails, it falls through to a
+`kolibri manage shell` repair: flips `allow_other_browsers_to_connect`,
+creates the admin user if missing, resets the password if it has drifted, and
+grants superuser permission if needed. Then it re-verifies login.
+
+`start.sh` runs reconcile automatically before Laravel and Vite, so a fresh
+laptop or reflashed Pi reaches the same baseline as a working production
+install without manual setup-wizard steps.
+
+`--dry-run` shows what the repair script would do without writing anything.
+
+### KOLIBRI_HOME caveat
+
+If the running Kolibri server is started by a systemd unit under a different
+user than the one running `php artisan` (common on Pi deployments),
+`kolibri manage shell` reads a different SQLite file than the live server,
+so any repair would write into the wrong DB. Reconcile only invokes the
+shell when login actually fails; in that case set `KOLIBRI_HOME=<path>` to
+point at the live server's home directory, or run the command as the same
+user that runs the Kolibri service.
+
 ## Status
 
 Early development. Architecture and curriculum mapping model in progress.
