@@ -5,6 +5,7 @@ namespace KuboKolibri;
 use Illuminate\Support\ServiceProvider;
 use KuboKolibri\Client\KolibriClient;
 use KuboKolibri\Console\GenerateChannelCommand;
+use KuboKolibri\Console\ReconcileCommand;
 use KuboKolibri\Console\SyncProgressCommand;
 use KuboKolibri\Services\ChannelGenerator;
 use KuboKolibri\Services\ExerciseRunService;
@@ -71,6 +72,7 @@ class KuboKolibriServiceProvider extends ServiceProvider
             $this->commands([
                 SyncProgressCommand::class,
                 GenerateChannelCommand::class,
+                ReconcileCommand::class,
             ]);
         }
     }
