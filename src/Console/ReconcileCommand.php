@@ -32,13 +32,35 @@ class ReconcileCommand extends Command
             return self::FAILURE;
         }
 
+        // Fast path: if HTTP login already works, the device is reconciled.
+        // We can skip `kolibri manage shell` entirely — useful when the
+        // running Kolibri server reads a different KOLIBRI_HOME than the
+        // user invoking artisan (e.g. systemd-managed installs).
+        if ($this->loginWorks($url, $facility, $username, $password)) {
+            $this->info('login OK — already reconciled');
+            return self::SUCCESS;
+        }
+
+        $this->warn('  login failed — attempting repair via kolibri manage shell');
         if (!$this->runReconcileScript($username, $password)) {
+            $this->error('Repair failed. If the Kolibri server runs under a different user');
+            $this->error('or KOLIBRI_HOME, set KOLIBRI_HOME=<path> when running this command.');
             return self::FAILURE;
         }
 
         return $this->verifyLogin($url, $facility, $username, $password)
             ? self::SUCCESS
             : self::FAILURE;
+    }
+
+    private function loginWorks(string $url, array $facility, string $username, string $password): bool
+    {
+        $resp = Http::asJson()->post("{$url}/api/auth/session/", [
+            'username' => $username,
+            'password' => $password,
+            'facility' => $facility['id'],
+        ]);
+        return $resp->ok();
     }
 
     private function checkReachable(string $url): bool
