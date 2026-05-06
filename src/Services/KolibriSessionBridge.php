@@ -57,11 +57,12 @@ class KolibriSessionBridge
     public function exerciseSessionData(User $user, string $contentNodeId): array
     {
         $school = School::whereNotNull('kolibri_facility_id')->first();
+        $facilityId = config('kubo-kolibri.facility_id_override') ?: $school?->kolibri_facility_id;
         $kolibriReady = false;
 
-        if ($school?->kolibri_facility_id) {
+        if ($facilityId) {
             if (!$user->kolibri_user_id) {
-                $this->provisioner->provisionLearner($user, $school->kolibri_facility_id);
+                $this->provisioner->provisionLearner($user, $facilityId);
                 $user->refresh();
             }
             $kolibriReady = (bool) $user->kolibri_user_id;
@@ -70,7 +71,7 @@ class KolibriSessionBridge
         return [
             'contentUrl' => $this->client->proxyRenderUrl($contentNodeId),
             'sessionUrl' => $kolibriReady ? $this->client->proxySessionApiUrl() : null,
-            'facilityId' => $kolibriReady ? $school->kolibri_facility_id : null,
+            'facilityId' => $kolibriReady ? $facilityId : null,
             'kolibriUsername' => $kolibriReady ? $this->provisioner->kolibriUsername($user) : null,
             'kolibriPassword' => $kolibriReady ? $this->provisioner->kolibriPassword($user) : null,
         ];

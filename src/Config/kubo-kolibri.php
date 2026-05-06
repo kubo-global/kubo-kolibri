@@ -28,6 +28,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Facility ID Override
+    |--------------------------------------------------------------------------
+    |
+    | Local-dev escape hatch. When set, takes precedence over the school row's
+    | `kolibri_facility_id` for the iframe SSO flow. Use it when working
+    | against a production DB dump on a laptop whose local Kolibri has a
+    | different facility UUID — without modifying the dump. Leave unset in
+    | production.
+    |
+    */
+    'facility_id_override' => env('KOLIBRI_FACILITY_ID'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Learner Password Secret
     |--------------------------------------------------------------------------
     |
