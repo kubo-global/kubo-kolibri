@@ -32,7 +32,7 @@ class ReconcileCommand extends Command
             return self::FAILURE;
         }
 
-        if (!$this->runReconcileScript($username, $password, $facility['id'])) {
+        if (!$this->runReconcileScript($username, $password)) {
             return self::FAILURE;
         }
 
@@ -74,7 +74,7 @@ class ReconcileCommand extends Command
         return $f;
     }
 
-    private function runReconcileScript(string $username, string $password, string $facilityId): bool
+    private function runReconcileScript(string $username, string $password): bool
     {
         $manageCmd = $this->detectManageCmd();
         if (!$manageCmd) {
@@ -82,7 +82,7 @@ class ReconcileCommand extends Command
             return false;
         }
 
-        $script = $this->buildReconcileScript($username, $password, $facilityId, (bool) $this->option('dry-run'));
+        $script = $this->buildReconcileScript($username, $password, (bool) $this->option('dry-run'));
 
         if ($this->option('dry-run')) {
             $this->line('[dry-run] would run via kolibri manage shell:');
@@ -127,11 +127,10 @@ class ReconcileCommand extends Command
         return null;
     }
 
-    private function buildReconcileScript(string $username, string $password, string $facilityId, bool $dryRun): string
+    private function buildReconcileScript(string $username, string $password, bool $dryRun): string
     {
         $u = addslashes($username);
         $p = addslashes($password);
-        $f = addslashes($facilityId);
         $dry = $dryRun ? 'True' : 'False';
 
         return <<<PY
@@ -151,7 +150,9 @@ elif not ds.allow_other_browsers_to_connect:
 else:
     print("device: ok")
 
-facility = Facility.objects.get(id="{$f}")
+facility = Facility.objects.first()
+if facility is None:
+    raise SystemExit("no facility — aborting")
 username = "{$u}"
 password = "{$p}"
 
