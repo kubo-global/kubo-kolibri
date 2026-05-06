@@ -139,8 +139,10 @@ from kolibri.core.auth.models import Facility, FacilityUser
 
 DRY_RUN = {$dry}
 
-ds = DeviceSettings.objects.get()
-if not ds.allow_other_browsers_to_connect:
+ds = DeviceSettings.objects.first()
+if ds is None:
+    print("device: no settings row (server-mode install — leaving alone)")
+elif not ds.allow_other_browsers_to_connect:
     if not DRY_RUN:
         ds.allow_other_browsers_to_connect = True
         ds.save()
