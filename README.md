@@ -145,6 +145,17 @@ install without manual setup-wizard steps.
 
 `--dry-run` shows what the repair script would do without writing anything.
 
+To verify that the curriculum mappings stored in KUBO still resolve to
+content that lives in the local Kolibri (catches missing channels or
+nodes after a backup/restore or partial import):
+
+```
+php artisan kolibri:check-content [--detail]
+```
+
+It groups by channel so the failure mode "channel never imported" reports
+once instead of N times. Exits non-zero if anything is missing.
+
 ### KOLIBRI_HOME caveat
 
 If the running Kolibri server is started by a systemd unit under a different
