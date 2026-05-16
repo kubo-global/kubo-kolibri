@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use KuboKolibri\Client\KolibriClient;
 use KuboKolibri\Console\CheckContentCommand;
 use KuboKolibri\Console\GenerateChannelCommand;
+use KuboKolibri\Console\ProvisionCommand;
 use KuboKolibri\Console\ReconcileCommand;
 use KuboKolibri\Console\SyncProgressCommand;
 use KuboKolibri\Services\ChannelGenerator;
@@ -74,6 +75,7 @@ class KuboKolibriServiceProvider extends ServiceProvider
                 SyncProgressCommand::class,
                 GenerateChannelCommand::class,
                 ReconcileCommand::class,
+                ProvisionCommand::class,
                 CheckContentCommand::class,
             ]);
         }
