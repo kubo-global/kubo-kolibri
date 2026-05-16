@@ -4,6 +4,7 @@ namespace KuboKolibri\Services;
 
 use App\Models\School;
 use App\Models\User;
+use Illuminate\Support\Facades\Log;
 use KuboKolibri\Client\KolibriClient;
 
 /**
@@ -66,6 +67,11 @@ class KolibriSessionBridge
                 $user->refresh();
             }
             $kolibriReady = (bool) $user->kolibri_user_id;
+            if (!$kolibriReady) {
+                Log::warning('Kolibri learner provisioning failed', ['user_id' => $user->id, 'facility_id' => $facilityId]);
+            }
+        } else {
+            Log::warning('Kolibri bridge skipped: no school has kolibri_facility_id. Run `php artisan kolibri:provision`.', ['user_id' => $user->id]);
         }
 
         return [
