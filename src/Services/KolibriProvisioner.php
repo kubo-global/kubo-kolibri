@@ -32,7 +32,13 @@ class KolibriProvisioner
             return $school->kolibri_facility_id;
         }
 
-        $facility = $this->client->createFacility($school->name);
+        $existing = $this->client->listFacilities();
+        if (count($existing) === 1 && !empty($existing[0]['id'])) {
+            $facility = $existing[0];
+        } else {
+            $facility = $this->client->createFacility($school->name);
+        }
+
         if (!$facility || empty($facility['id'])) {
             return null;
         }
@@ -86,12 +92,17 @@ class KolibriProvisioner
         $username = $this->kolibriUsername($user);
         $password = $this->kolibriPassword($user);
 
-        $learner = $this->client->createLearner(
-            $facilityId,
-            $username,
-            $user->full_name,
-            $password,
-        );
+        $existing = $this->client->findFacilityUserByUsername($facilityId, $username);
+        if ($existing && !empty($existing['id'])) {
+            $learner = $existing;
+        } else {
+            $learner = $this->client->createLearner(
+                $facilityId,
+                $username,
+                $user->full_name,
+                $password,
+            );
+        }
 
         if (!$learner || empty($learner['id'])) {
             return null;
