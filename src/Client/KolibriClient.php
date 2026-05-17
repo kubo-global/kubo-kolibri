@@ -142,6 +142,16 @@ class KolibriClient
         ]);
     }
 
+    public function listFacilities(): array
+    {
+        try {
+            $response = $this->http->get('/api/auth/facility/');
+            return json_decode($response->getBody()->getContents(), true) ?: [];
+        } catch (GuzzleException $e) {
+            return [];
+        }
+    }
+
     public function createClassroom(string $facilityId, string $name): ?array
     {
         return $this->post('/api/auth/classroom/', [
@@ -158,6 +168,12 @@ class KolibriClient
             'password' => $password,
             'facility' => $facilityId,
         ]);
+    }
+
+    public function findFacilityUserByUsername(string $facilityId, string $username): ?array
+    {
+        return $this->get('/api/auth/facilityuser/', ['search' => $username, 'facility' => $facilityId])
+            ->firstWhere('username', $username);
     }
 
     public function addToClassroom(string $userId, string $classroomId): ?array
