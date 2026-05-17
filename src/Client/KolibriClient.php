@@ -176,6 +176,11 @@ class KolibriClient
             ->firstWhere('username', $username);
     }
 
+    public function deleteFacilityUser(string $userId): void
+    {
+        $this->delete("/api/auth/facilityuser/{$userId}/");
+    }
+
     public function addToClassroom(string $userId, string $classroomId): ?array
     {
         return $this->post('/api/auth/membership/', [
