@@ -28,15 +28,20 @@ Route::prefix('kolibri')->middleware(['web', 'auth'])->group(function () {
     Route::get('next/{subjectId}/{topicId}', [ContentController::class, 'nextExercise'])
         ->name('kolibri.next-exercise');
 
-    // Curriculum mapping API (teachers/admins)
-    Route::get('channels', [ContentController::class, 'channels'])
-        ->name('kolibri.channels');
-    Route::get('browse/{nodeId}', [ContentController::class, 'browseContent'])
-        ->name('kolibri.browse');
-    Route::get('search', [ContentController::class, 'searchContent'])
-        ->name('kolibri.search');
-    Route::post('mapping', [ContentController::class, 'createMapping'])
-        ->name('kolibri.create-mapping');
-    Route::delete('mapping/{mapId}', [ContentController::class, 'deleteMapping'])
-        ->name('kolibri.delete-mapping');
+    // Curriculum mapping API — staff only. Without this gate any pupil (who holds
+    // a valid low-privilege account) could enumerate mapIds and delete the whole
+    // school's curriculum mappings, or forge new ones. The controller repeats the
+    // check so the guard holds even if the Spatie `role` alias isn't registered.
+    Route::middleware('role:headmaster|admin|teacher')->group(function () {
+        Route::get('channels', [ContentController::class, 'channels'])
+            ->name('kolibri.channels');
+        Route::get('browse/{nodeId}', [ContentController::class, 'browseContent'])
+            ->name('kolibri.browse');
+        Route::get('search', [ContentController::class, 'searchContent'])
+            ->name('kolibri.search');
+        Route::post('mapping', [ContentController::class, 'createMapping'])
+            ->name('kolibri.create-mapping');
+        Route::delete('mapping/{mapId}', [ContentController::class, 'deleteMapping'])
+            ->name('kolibri.delete-mapping');
+    });
 });

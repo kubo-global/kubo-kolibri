@@ -322,7 +322,7 @@ class KolibriClient
     // HTTP
     // =========================================================================
 
-    private function get(string $path, array $params = []): Collection
+    public function get(string $path, array $params = []): Collection
     {
         try {
             $options = [];
