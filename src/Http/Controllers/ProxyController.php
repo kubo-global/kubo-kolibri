@@ -6,6 +6,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Log;
 
 class ProxyController extends Controller
 {
@@ -56,6 +57,12 @@ class ProxyController extends Controller
         try {
             $response = $this->http->request($request->method(), $targetUrl, $options);
         } catch (GuzzleException $e) {
+            // The user sees a 502; log why so a down/misrouted Kolibri is diagnosable.
+            Log::warning('Kolibri proxy request failed', [
+                'method' => $request->method(),
+                'path' => $request->path(),
+                'error' => $e->getMessage(),
+            ]);
             return response('Kolibri is not available.', 502);
         }
 

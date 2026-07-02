@@ -5,6 +5,7 @@ namespace KuboKolibri\Client;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Log;
 
 class KolibriClient
 {
@@ -50,7 +51,10 @@ class KolibriClient
                 }
             }
         } catch (GuzzleException $e) {
-            // Auth failed — client will work without auth for public endpoints
+            // Auth failed — the client still works for public endpoints, but every
+            // authenticated call downstream will quietly return empty. Log it so a
+            // misconfigured/unreachable Kolibri is diagnosable instead of silent.
+            $this->logFailure('authentication', $e);
         }
     }
 
@@ -61,6 +65,7 @@ class KolibriClient
             $facilities = json_decode($response->getBody()->getContents(), true);
             return $facilities[0]['id'] ?? null;
         } catch (GuzzleException $e) {
+            $this->logFailure('facility lookup', $e);
             return null;
         }
     }
@@ -148,6 +153,7 @@ class KolibriClient
             $response = $this->http->get('/api/auth/facility/');
             return json_decode($response->getBody()->getContents(), true) ?: [];
         } catch (GuzzleException $e) {
+            $this->logFailure('list facilities', $e);
             return [];
         }
     }
@@ -344,6 +350,7 @@ class KolibriClient
 
             return collect($data);
         } catch (GuzzleException $e) {
+            $this->logFailure("GET {$path}", $e);
             return collect();
         }
     }
@@ -359,11 +366,7 @@ class KolibriClient
             $response = $this->http->post($path, $options);
             return json_decode($response->getBody()->getContents(), true);
         } catch (GuzzleException $e) {
-            \Illuminate\Support\Facades\Log::warning('Kolibri POST failed', [
-                'path' => $path,
-                'status' => method_exists($e, 'getResponse') && $e->getResponse() ? $e->getResponse()->getStatusCode() : null,
-                'body' => method_exists($e, 'getResponse') && $e->getResponse() ? $e->getResponse()->getBody()->getContents() : $e->getMessage(),
-            ]);
+            $this->logFailure("POST {$path}", $e);
             return null;
         }
     }
@@ -378,7 +381,26 @@ class KolibriClient
 
             $this->http->delete($path, $options);
         } catch (GuzzleException $e) {
-            // Ignore — lesson may already be deleted
+            // A lesson may already be gone (404) — log at debug so it's visible
+            // when chasing a problem, without turning routine deletes into noise.
+            Log::debug("Kolibri DELETE {$path} failed", ['error' => $e->getMessage()]);
         }
+    }
+
+    /**
+     * Log a failed Kolibri call so it never fails in silence. Records the HTTP
+     * status and the exception message, but NOT the response body — bodies on the
+     * auth path can contain credentials/cookies that don't belong in the log.
+     */
+    private function logFailure(string $op, \Throwable $e): void
+    {
+        $status = method_exists($e, 'getResponse') && $e->getResponse()
+            ? $e->getResponse()->getStatusCode()
+            : null;
+
+        Log::warning("Kolibri {$op} failed", [
+            'status' => $status,
+            'error' => $e->getMessage(),
+        ]);
     }
 }
