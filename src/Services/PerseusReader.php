@@ -2,6 +2,7 @@
 
 namespace KuboKolibri\Services;
 
+use Illuminate\Support\Facades\Log;
 use KuboKolibri\Client\KolibriClient;
 
 /**
@@ -38,6 +39,9 @@ class PerseusReader
 
             return $this->parseItems($assessmentItems);
         } catch (\Throwable $e) {
+            // Returning [] here means "clone produced an empty exercise" — exactly
+            // the failure that hid a fatal for so long. Log so it can't recur silently.
+            Log::warning('Perseus readQuestions failed', ['node_id' => $nodeId, 'error' => $e->getMessage()]);
             return [];
         }
     }
@@ -69,6 +73,7 @@ class PerseusReader
                 'include_assessment_items' => true,
             ])->toArray();
         } catch (\Throwable $e) {
+            Log::warning('Perseus fetchAssessmentItems failed', ['node_id' => $nodeId, 'error' => $e->getMessage()]);
             return [];
         }
     }

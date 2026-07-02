@@ -16,10 +16,6 @@ class KolibriProvisioner
     {
         $this->client = $client;
         $this->passwordSecret = $passwordSecret;
-
-        if (empty($passwordSecret)) {
-            \Illuminate\Support\Facades\Log::warning('KOLIBRI_LEARNER_SECRET is not set. Set it in .env for secure learner passwords.');
-        }
     }
 
     /**
@@ -172,9 +168,20 @@ class KolibriProvisioner
     /**
      * Generate the deterministic Kolibri password for a KUBO user.
      * Derived from a shared secret + user ID so it never needs to be stored.
+     *
+     * Fails closed when the secret is unset: without it every password would be
+     * sha256(id)[:16], publicly computable from a pupil's (sequential) id, so any
+     * pupil could log into any classmate's or teacher's Kolibri account.
      */
     public function kolibriPassword(User $user): string
     {
+        if ($this->passwordSecret === '') {
+            throw new \RuntimeException(
+                'KOLIBRI_LEARNER_SECRET is not set. Set a strong random value in .env '
+                .'before provisioning Kolibri learners — refusing to derive guessable passwords.'
+            );
+        }
+
         return substr(hash('sha256', $this->passwordSecret . $user->id), 0, 16);
     }
 }

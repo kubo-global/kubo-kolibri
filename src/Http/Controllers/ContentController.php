@@ -66,6 +66,8 @@ class ContentController extends Controller
      */
     public function channels(KolibriClient $client)
     {
+        $this->authorizeStaff();
+
         return response()->json($client->getChannels());
     }
 
@@ -74,6 +76,8 @@ class ContentController extends Controller
      */
     public function browseContent(KolibriClient $client, string $nodeId)
     {
+        $this->authorizeStaff();
+
         $tree = $client->getContentTree($nodeId);
 
         return response()->json($tree);
@@ -84,6 +88,8 @@ class ContentController extends Controller
      */
     public function searchContent(Request $request, ContentResolver $resolver)
     {
+        $this->authorizeStaff();
+
         $request->validate(['q' => 'required|string|min:2']);
 
         $results = $resolver->searchForMapping(
@@ -99,6 +105,8 @@ class ContentController extends Controller
      */
     public function createMapping(Request $request)
     {
+        $this->authorizeStaff();
+
         $validated = $request->validate([
             'school_id' => 'required|exists:schools,id',
             'subject_id' => 'required|exists:subjects,id',
@@ -146,9 +154,24 @@ class ContentController extends Controller
      */
     public function deleteMapping(int $mapId)
     {
+        $this->authorizeStaff();
+
         CurriculumMap::findOrFail($mapId)->delete();
 
         return response()->json(null, 204);
+    }
+
+    /**
+     * Guard the curriculum-authoring endpoints: only staff may read the Kolibri
+     * catalogue or create/delete mappings. Mirrors the route-level `role` gate so
+     * the check holds even if the middleware alias isn't registered.
+     */
+    private function authorizeStaff(): void
+    {
+        abort_unless(
+            auth()->check() && auth()->user()->hasAnyRole(['headmaster', 'admin', 'teacher']),
+            403
+        );
     }
 
     private function getFacilityId($user): ?string
