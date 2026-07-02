@@ -26,17 +26,10 @@ class ProxyController extends Controller
 
     public function proxy(Request $request, string $path = '')
     {
-        // Laravel strips trailing slashes from route parameters, but Kolibri
-        // redirects /en/learn → /en/learn/ (301). Recover the original path
-        // from the request URI to preserve the trailing slash.
-        $requestPath = $request->getRequestUri(); // e.g. /kolibri-proxy/en/learn/?foo=bar
-        $targetUrl = preg_replace('#^/kolibri-proxy#', '', explode('?', $requestPath)[0]);
-        if ($targetUrl === '') {
-            $targetUrl = '/';
-        }
-        if ($request->getQueryString()) {
-            $targetUrl .= '?' . $request->getQueryString();
-        }
+        // Recover the original path from the request URI (Laravel strips the
+        // trailing slash from route params, but Kolibri 301s /en/learn → /en/learn/)
+        // and pin it to the configured Kolibri host — see resolveTargetUrl.
+        $targetUrl = $this->resolveTargetUrl($request->getRequestUri(), $request->getQueryString());
 
         $cookies = $this->buildCookieJar($request);
 
@@ -99,6 +92,34 @@ class ProxyController extends Controller
         }
 
         return $laravelResponse;
+    }
+
+    /**
+     * Build the absolute Kolibri URL for an incoming proxy request, pinned to the
+     * configured Kolibri host.
+     *
+     * The proxy forwards an arbitrary sub-path, which is an SSRF risk: the raw path
+     * after `/kolibri-proxy` was passed to Guzzle as a relative reference and
+     * resolved against base_uri, so `//evil.com/x` (a network-path reference) would
+     * resolve to `http://evil.com/x`. Collapsing leading slashes and prepending the
+     * Kolibri base URL forces the authority to stay Kolibri's; an embedded scheme or
+     * a backslash (which some clients treat as `/`) is rejected outright.
+     */
+    public function resolveTargetUrl(string $requestUri, ?string $queryString): string
+    {
+        $path = preg_replace('#^/kolibri-proxy#', '', explode('?', $requestUri)[0]);
+        $path = '/' . ltrim((string) $path, '/');
+
+        if (str_contains($path, '\\') || preg_match('#^/[a-z][a-z0-9+.\-]*://#i', $path)) {
+            abort(400, 'Invalid proxy path.');
+        }
+
+        $url = $this->kolibriUrl . $path;
+        if ($queryString) {
+            $url .= '?' . $queryString;
+        }
+
+        return $url;
     }
 
     private function rewriteLocationHeader(string $location): string
