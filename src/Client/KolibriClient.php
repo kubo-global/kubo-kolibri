@@ -347,11 +347,6 @@ class KolibriClient
     // URLs
     // =========================================================================
 
-    public function getBaseUrl(): string
-    {
-        return $this->baseUrl;
-    }
-
     public function renderUrl(string $nodeId): string
     {
         return "{$this->baseUrl}/learn/#/topics/c/{$nodeId}";
@@ -360,16 +355,6 @@ class KolibriClient
     public function proxyRenderUrl(string $nodeId): string
     {
         return "/kolibri-proxy/learn/#/topics/c/{$nodeId}";
-    }
-
-    public function sessionApiUrl(): string
-    {
-        return "{$this->baseUrl}/api/auth/session/";
-    }
-
-    public function proxySessionApiUrl(): string
-    {
-        return "/kolibri-proxy/api/auth/session/";
     }
 
     // =========================================================================
