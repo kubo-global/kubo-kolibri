@@ -70,6 +70,49 @@ class KolibriClient
         }
     }
 
+    /**
+     * Open a Kolibri session for a specific learner, server-side, and return the
+     * resulting session cookies. Uses a throwaway cookie jar so it never disturbs
+     * this client's own (admin) session.
+     *
+     * This is how the SSO bridge should work: KUBO authenticates the learner
+     * against Kolibri and hands the browser only the resulting session cookie —
+     * the learner's password never reaches the browser.
+     *
+     * @return array{kolibri: string, kolibri_csrftoken: ?string}|null  null on failure
+     */
+    public function openSession(string $username, string $password, ?string $facilityId = null): ?array
+    {
+        $jar = new \GuzzleHttp\Cookie\CookieJar();
+
+        try {
+            $this->http->post('/api/auth/session/', [
+                'json' => array_filter([
+                    'username' => $username,
+                    'password' => $password,
+                    'facility' => $facilityId,
+                ], fn ($v) => $v !== null),
+                'cookies' => $jar,
+            ]);
+        } catch (GuzzleException $e) {
+            // Bad credentials or an unreachable Kolibri both land here.
+            $this->logFailure('learner session', $e);
+            return null;
+        }
+
+        $session = null;
+        $csrf = null;
+        foreach ($jar as $cookie) {
+            if ($cookie->getName() === 'kolibri') {
+                $session = $cookie->getValue();
+            } elseif (str_contains($cookie->getName(), 'csrf')) {
+                $csrf = $cookie->getValue();
+            }
+        }
+
+        return $session ? ['kolibri' => $session, 'kolibri_csrftoken' => $csrf] : null;
+    }
+
     // =========================================================================
     // Channels
     // =========================================================================
