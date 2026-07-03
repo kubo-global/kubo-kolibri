@@ -29,21 +29,21 @@ class ContentController extends Controller
 
     /**
      * Redirect a student to Kolibri content via the session bridge.
-     * Auto-logs the student into Kolibri, then redirects to the content.
+     *
+     * Establishes the learner's Kolibri session server-side and redirects to the
+     * proxied content with the session cookie set — the password never reaches the
+     * browser. If SSO isn't ready, Kolibri shows its own name-picker as fallback.
      */
-    public function redirect(Request $request, KolibriSessionBridge $bridge, KolibriClient $client, string $nodeId)
+    public function redirect(Request $request, KolibriSessionBridge $bridge, string $nodeId)
     {
-        $user = $request->user();
-        $facilityId = $this->getFacilityId($user);
+        $data = $bridge->exerciseSessionData($request->user(), $nodeId);
 
-        // If school is provisioned, try auto-login via session bridge
-        if ($facilityId && $user->kolibri_user_id) {
-            $data = $bridge->buildRedirectData($user, $facilityId, $nodeId);
-            return view('kubo-kolibri::kolibri-redirect', $data);
+        $response = redirect()->to($data['contentUrl']);
+        foreach ($data['cookieHeaders'] as $cookieHeader) {
+            $response->headers->set('Set-Cookie', $cookieHeader, false);
         }
 
-        // Not provisioned — redirect straight to Kolibri content URL
-        return redirect()->away($client->renderUrl($nodeId));
+        return $response;
     }
 
     /**
@@ -172,19 +172,5 @@ class ContentController extends Controller
             auth()->check() && auth()->user()->hasAnyRole(['headmaster', 'admin', 'teacher']),
             403
         );
-    }
-
-    private function getFacilityId($user): ?string
-    {
-        // Walk from user → enrollment → offering → school to find facility ID
-        $enrollment = $user->enrollments()->with('offering')->latest()->first();
-        if (!$enrollment || !$enrollment->offering) {
-            return null;
-        }
-
-        // Offering doesn't directly have school_id, but grade → school relationship
-        // For now, use the school from the config or the first school
-        $school = \App\Models\School::whereNotNull('kolibri_facility_id')->first();
-        return $school?->kolibri_facility_id;
     }
 }

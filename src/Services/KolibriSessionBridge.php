@@ -27,47 +27,40 @@ class KolibriSessionBridge
     }
 
     /**
-     * Build the data needed for the bridge page to auto-login and redirect.
+     * Auto-provision a student and establish their Kolibri session server-side
+     * for the exercise page.
      *
-     * Returns an array with:
-     * - kolibri_url: base URL of Kolibri server
-     * - session_url: Kolibri's session API endpoint
-     * - facility_id: the Kolibri facility ID
-     * - username: the learner's Kolibri username
-     * - password: the learner's deterministic password
-     * - content_url: the final Kolibri content URL to redirect to
-     */
-    public function buildRedirectData(User $user, string $facilityId, string $contentNodeId): array
-    {
-        return [
-            'kolibri_url' => $this->client->getBaseUrl(),
-            'session_url' => $this->client->sessionApiUrl(),
-            'facility_id' => $facilityId,
-            'username' => $this->provisioner->kolibriUsername($user),
-            'password' => $this->provisioner->kolibriPassword($user),
-            'content_url' => $this->client->renderUrl($contentNodeId),
-        ];
-    }
-
-    /**
-     * Auto-provision a student and build proxy-based session data for the exercise page.
+     * KUBO logs the learner into Kolibri here and returns the resulting session
+     * as ready-to-append Set-Cookie headers (scoped to the proxy path). The
+     * learner's password never reaches the browser; the page just loads the
+     * proxied content and the cookie authenticates it. If Kolibri isn't ready or
+     * the login fails, `ssoReady` is false and the iframe falls back to Kolibri's
+     * own name-picker.
      *
-     * Handles the full lifecycle: find Kolibri school, provision if needed,
-     * return content URL and optional login credentials.
+     * @return array{contentUrl: string, ssoReady: bool, cookieHeaders: string[]}
      */
     public function exerciseSessionData(User $user, string $contentNodeId): array
     {
         $school = School::whereNotNull('kolibri_facility_id')->first();
         $facilityId = config('kubo-kolibri.facility_id_override') ?: $school?->kolibri_facility_id;
-        $kolibriReady = false;
+        $session = null;
 
         if ($facilityId) {
             if (!$user->kolibri_user_id) {
                 $this->provisioner->provisionLearner($user, $facilityId);
                 $user->refresh();
             }
-            $kolibriReady = (bool) $user->kolibri_user_id;
-            if (!$kolibriReady) {
+
+            if ($user->kolibri_user_id) {
+                $session = $this->client->openSession(
+                    $this->provisioner->kolibriUsername($user),
+                    $this->provisioner->kolibriPassword($user),
+                    $facilityId,
+                );
+                if (!$session) {
+                    Log::warning('Kolibri learner session could not be established server-side', ['user_id' => $user->id]);
+                }
+            } else {
                 Log::warning('Kolibri learner provisioning failed', ['user_id' => $user->id, 'facility_id' => $facilityId]);
             }
         } else {
@@ -76,10 +69,32 @@ class KolibriSessionBridge
 
         return [
             'contentUrl' => $this->client->proxyRenderUrl($contentNodeId),
-            'sessionUrl' => $kolibriReady ? $this->client->proxySessionApiUrl() : null,
-            'facilityId' => $kolibriReady ? $facilityId : null,
-            'kolibriUsername' => $kolibriReady ? $this->provisioner->kolibriUsername($user) : null,
-            'kolibriPassword' => $kolibriReady ? $this->provisioner->kolibriPassword($user) : null,
+            'ssoReady' => (bool) $session,
+            'cookieHeaders' => $session ? $this->sessionCookieHeaders($session) : [],
         ];
+    }
+
+    /**
+     * Raw Set-Cookie header strings that place Kolibri's session on the browser,
+     * scoped to the proxy path so the browser only sends them on proxied requests.
+     *
+     * Deliberately raw strings rather than Illuminate cookies: the proxy forwards
+     * these values verbatim to Kolibri, so they must not pass through Laravel's
+     * cookie encryption. The session cookie is HttpOnly (only the proxy reads it,
+     * server-side); the CSRF token mirrors Django's own non-HttpOnly cookie.
+     *
+     * @param  array{kolibri: string, kolibri_csrftoken: ?string}  $session
+     * @return string[]
+     */
+    private function sessionCookieHeaders(array $session): array
+    {
+        $path = '/kolibri-proxy/';
+        $headers = ["kolibri={$session['kolibri']}; Path={$path}; HttpOnly; SameSite=Lax"];
+
+        if (!empty($session['kolibri_csrftoken'])) {
+            $headers[] = "kolibri_csrftoken={$session['kolibri_csrftoken']}; Path={$path}; SameSite=Lax";
+        }
+
+        return $headers;
     }
 }
