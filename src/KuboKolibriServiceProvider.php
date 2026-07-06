@@ -4,10 +4,13 @@ namespace KuboKolibri;
 
 use Illuminate\Support\ServiceProvider;
 use KuboKolibri\Client\KolibriClient;
+use KuboKolibri\Console\BackfillCurriculumMapTitles;
 use KuboKolibri\Console\CheckContentCommand;
 use KuboKolibri\Console\GenerateChannelCommand;
+use KuboKolibri\Console\InstallCurriculumCommand;
 use KuboKolibri\Console\ProvisionCommand;
 use KuboKolibri\Console\ReconcileCommand;
+use KuboKolibri\Console\RemoveCurriculumMapsByKeyword;
 use KuboKolibri\Console\SyncProgressCommand;
 use KuboKolibri\Services\ChannelGenerator;
 use KuboKolibri\Services\ExerciseRunService;
@@ -77,6 +80,9 @@ class KuboKolibriServiceProvider extends ServiceProvider
                 ReconcileCommand::class,
                 ProvisionCommand::class,
                 CheckContentCommand::class,
+                InstallCurriculumCommand::class,
+                BackfillCurriculumMapTitles::class,
+                RemoveCurriculumMapsByKeyword::class,
             ]);
         }
     }

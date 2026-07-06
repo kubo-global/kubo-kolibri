@@ -156,6 +156,24 @@ php artisan kolibri:check-content [--detail]
 It groups by channel so the failure mode "channel never imported" reports
 once instead of N times. Exits non-zero if anything is missing.
 
+### Bundled curricula
+
+The package ships ready-made curricula (skill graph, prerequisite edges, and
+Kolibri content mappings) as JSON fixtures in `resources/curricula/`. Installing
+one gives a fresh school a working /learn surface without hand-mapping content:
+
+```
+php artisan kolibri:install-curriculum --list
+php artisan kolibri:install-curriculum gambia-mathematics [--dry-run]
+```
+
+It is idempotent: skills match on (school, subject, grade, name) and mappings
+on (school, subject, node id), so re-running updates in place and keeps
+anything a teacher mapped locally. Headmasters can also install from the KUBO
+Settings UI via `POST kolibri/curricula/{slug}/install`. The subject and the
+grades named in the fixture must already exist in the school; the mapped
+channel must be imported in Kolibri (`kolibri:check-content` verifies).
+
 ### KOLIBRI_HOME caveat
 
 If the running Kolibri server is started by a systemd unit under a different

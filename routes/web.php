@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use KuboKolibri\Http\Controllers\ContentController;
+use KuboKolibri\Http\Controllers\CurriculumController;
 use KuboKolibri\Http\Controllers\ProxyController;
 
 // Kolibri reverse proxy — same-origin iframe access
@@ -43,5 +44,12 @@ Route::prefix('kolibri')->middleware(['web', 'auth'])->group(function () {
             ->name('kolibri.create-mapping');
         Route::delete('mapping/{mapId}', [ContentController::class, 'deleteMapping'])
             ->name('kolibri.delete-mapping');
+    });
+
+    // Bundled curriculum install — headmaster/admin only (teachers can map
+    // content, but installing a whole curriculum is a school-level decision).
+    Route::middleware('role:headmaster|admin')->group(function () {
+        Route::post('curricula/{slug}/install', [CurriculumController::class, 'install'])
+            ->name('kolibri.install-curriculum');
     });
 });

@@ -1,0 +1,3718 @@
+{
+  "name": "The Gambia, Mathematics (Lower Basic)",
+  "subject": "Mathematics",
+  "source": "Skill graph and Kolibri mappings authored at The Swallow, The Gambia",
+  "skills": [
+    {
+      "ref": 1,
+      "grade": "Grade 1",
+      "name": "Counting to 20",
+      "description": null,
+      "level": 1,
+      "scheduled_week": 1
+    },
+    {
+      "ref": 2,
+      "grade": "Grade 1",
+      "name": "Comparing and ordering sets",
+      "description": null,
+      "level": 2,
+      "scheduled_week": 4
+    },
+    {
+      "ref": 3,
+      "grade": "Grade 1",
+      "name": "Reading and writing numbers to 50",
+      "description": null,
+      "level": 3,
+      "scheduled_week": 7
+    },
+    {
+      "ref": 4,
+      "grade": "Grade 1",
+      "name": "Counting objects in a group",
+      "description": null,
+      "level": 4,
+      "scheduled_week": 10
+    },
+    {
+      "ref": 5,
+      "grade": "Grade 1",
+      "name": "Grouping in units and tens",
+      "description": null,
+      "level": 5,
+      "scheduled_week": 13
+    },
+    {
+      "ref": 6,
+      "grade": "Grade 1",
+      "name": "Addition of whole numbers to 50",
+      "description": null,
+      "level": 6,
+      "scheduled_week": 16
+    },
+    {
+      "ref": 7,
+      "grade": "Grade 1",
+      "name": "Subtraction",
+      "description": null,
+      "level": 7,
+      "scheduled_week": 19
+    },
+    {
+      "ref": 8,
+      "grade": "Grade 1",
+      "name": "Simple mathematical sentences",
+      "description": null,
+      "level": 8,
+      "scheduled_week": 22
+    },
+    {
+      "ref": 9,
+      "grade": "Grade 1",
+      "name": "Plane shapes",
+      "description": null,
+      "level": 9,
+      "scheduled_week": 25
+    },
+    {
+      "ref": 10,
+      "grade": "Grade 1",
+      "name": "Measurement of length",
+      "description": null,
+      "level": 10,
+      "scheduled_week": 28
+    },
+    {
+      "ref": 11,
+      "grade": "Grade 1",
+      "name": "Measurement of time",
+      "description": null,
+      "level": 11,
+      "scheduled_week": 31
+    },
+    {
+      "ref": 12,
+      "grade": "Grade 2",
+      "name": "Place value",
+      "description": null,
+      "level": 1,
+      "scheduled_week": 1
+    },
+    {
+      "ref": 13,
+      "grade": "Grade 2",
+      "name": "Ordering numbers and number sequences",
+      "description": null,
+      "level": 2,
+      "scheduled_week": 5
+    },
+    {
+      "ref": 14,
+      "grade": "Grade 2",
+      "name": "Addition and subtraction",
+      "description": null,
+      "level": 3,
+      "scheduled_week": 9
+    },
+    {
+      "ref": 15,
+      "grade": "Grade 2",
+      "name": "Building multiplication tables",
+      "description": null,
+      "level": 4,
+      "scheduled_week": 13
+    },
+    {
+      "ref": 16,
+      "grade": "Grade 2",
+      "name": "Fractions",
+      "description": null,
+      "level": 5,
+      "scheduled_week": 17
+    },
+    {
+      "ref": 17,
+      "grade": "Grade 2",
+      "name": "Simple mathematical statements",
+      "description": null,
+      "level": 6,
+      "scheduled_week": 21
+    },
+    {
+      "ref": 18,
+      "grade": "Grade 2",
+      "name": "Measuring length",
+      "description": null,
+      "level": 7,
+      "scheduled_week": 25
+    },
+    {
+      "ref": 19,
+      "grade": "Grade 2",
+      "name": "Telling the time",
+      "description": null,
+      "level": 8,
+      "scheduled_week": 29
+    },
+    {
+      "ref": 20,
+      "grade": "Grade 2",
+      "name": "Everyday statistics",
+      "description": null,
+      "level": 9,
+      "scheduled_week": 33
+    },
+    {
+      "ref": 21,
+      "grade": "Grade 3",
+      "name": "Reading and writing numbers",
+      "description": null,
+      "level": 1,
+      "scheduled_week": 1
+    },
+    {
+      "ref": 22,
+      "grade": "Grade 3",
+      "name": "Addition and subtraction (3-digit)",
+      "description": null,
+      "level": 2,
+      "scheduled_week": 3
+    },
+    {
+      "ref": 23,
+      "grade": "Grade 3",
+      "name": "Fractions (3rd grade)",
+      "description": null,
+      "level": 3,
+      "scheduled_week": 5
+    },
+    {
+      "ref": 24,
+      "grade": "Grade 3",
+      "name": "Place value (3rd grade)",
+      "description": null,
+      "level": 4,
+      "scheduled_week": 7
+    },
+    {
+      "ref": 25,
+      "grade": "Grade 3",
+      "name": "Multiplication",
+      "description": null,
+      "level": 5,
+      "scheduled_week": 9
+    },
+    {
+      "ref": 26,
+      "grade": "Grade 3",
+      "name": "Division",
+      "description": null,
+      "level": 6,
+      "scheduled_week": 11
+    },
+    {
+      "ref": 27,
+      "grade": "Grade 3",
+      "name": "Money and shopping",
+      "description": null,
+      "level": 7,
+      "scheduled_week": 13
+    },
+    {
+      "ref": 28,
+      "grade": "Grade 3",
+      "name": "Using inequality symbols",
+      "description": null,
+      "level": 8,
+      "scheduled_week": 15
+    },
+    {
+      "ref": 29,
+      "grade": "Grade 3",
+      "name": "Plane shapes (3rd grade)",
+      "description": null,
+      "level": 9,
+      "scheduled_week": 17
+    },
+    {
+      "ref": 30,
+      "grade": "Grade 3",
+      "name": "Length (3rd grade)",
+      "description": null,
+      "level": 10,
+      "scheduled_week": 19
+    },
+    {
+      "ref": 31,
+      "grade": "Grade 3",
+      "name": "Capacity",
+      "description": null,
+      "level": 11,
+      "scheduled_week": 21
+    },
+    {
+      "ref": 32,
+      "grade": "Grade 3",
+      "name": "Weight",
+      "description": null,
+      "level": 12,
+      "scheduled_week": 23
+    },
+    {
+      "ref": 33,
+      "grade": "Grade 3",
+      "name": "Time (3rd grade)",
+      "description": null,
+      "level": 13,
+      "scheduled_week": 25
+    },
+    {
+      "ref": 34,
+      "grade": "Grade 3",
+      "name": "Everyday statistics (3rd grade)",
+      "description": null,
+      "level": 14,
+      "scheduled_week": 27
+    },
+    {
+      "ref": 35,
+      "grade": "Grade 4",
+      "name": "Place value (4th grade)",
+      "description": null,
+      "level": 1,
+      "scheduled_week": 1
+    },
+    {
+      "ref": 36,
+      "grade": "Grade 4",
+      "name": "Addition and subtraction (4th grade)",
+      "description": null,
+      "level": 2,
+      "scheduled_week": 4
+    },
+    {
+      "ref": 37,
+      "grade": "Grade 4",
+      "name": "Multiplication and division",
+      "description": null,
+      "level": 3,
+      "scheduled_week": 7
+    },
+    {
+      "ref": 38,
+      "grade": "Grade 4",
+      "name": "Fractions (4th grade)",
+      "description": null,
+      "level": 4,
+      "scheduled_week": 10
+    },
+    {
+      "ref": 39,
+      "grade": "Grade 4",
+      "name": "Decimals",
+      "description": null,
+      "level": 5,
+      "scheduled_week": 13
+    },
+    {
+      "ref": 40,
+      "grade": "Grade 4",
+      "name": "Money and shopping (4th grade)",
+      "description": null,
+      "level": 6,
+      "scheduled_week": 16
+    },
+    {
+      "ref": 41,
+      "grade": "Grade 4",
+      "name": "Equations (4th grade)",
+      "description": null,
+      "level": 7,
+      "scheduled_week": 19
+    },
+    {
+      "ref": 42,
+      "grade": "Grade 4",
+      "name": "Angles",
+      "description": null,
+      "level": 8,
+      "scheduled_week": 22
+    },
+    {
+      "ref": 43,
+      "grade": "Grade 4",
+      "name": "Perimeter and area",
+      "description": null,
+      "level": 9,
+      "scheduled_week": 25
+    },
+    {
+      "ref": 44,
+      "grade": "Grade 4",
+      "name": "Weight (4th grade)",
+      "description": null,
+      "level": 10,
+      "scheduled_week": 28
+    },
+    {
+      "ref": 45,
+      "grade": "Grade 4",
+      "name": "Time (4th grade)",
+      "description": null,
+      "level": 11,
+      "scheduled_week": 31
+    },
+    {
+      "ref": 46,
+      "grade": "Grade 4",
+      "name": "Everyday statistics (4th grade)",
+      "description": null,
+      "level": 12,
+      "scheduled_week": 34
+    },
+    {
+      "ref": 47,
+      "grade": "Grade 5",
+      "name": "Place value (5th grade)",
+      "description": null,
+      "level": 1,
+      "scheduled_week": 1
+    },
+    {
+      "ref": 48,
+      "grade": "Grade 5",
+      "name": "Addition and subtraction of whole numbers",
+      "description": null,
+      "level": 2,
+      "scheduled_week": 3
+    },
+    {
+      "ref": 49,
+      "grade": "Grade 5",
+      "name": "Fractions and decimals",
+      "description": null,
+      "level": 3,
+      "scheduled_week": 5
+    },
+    {
+      "ref": 50,
+      "grade": "Grade 5",
+      "name": "Percentages",
+      "description": null,
+      "level": 4,
+      "scheduled_week": 7
+    },
+    {
+      "ref": 51,
+      "grade": "Grade 5",
+      "name": "Multiplication (5th grade)",
+      "description": null,
+      "level": 5,
+      "scheduled_week": 9
+    },
+    {
+      "ref": 52,
+      "grade": "Grade 5",
+      "name": "Division (5th grade)",
+      "description": null,
+      "level": 6,
+      "scheduled_week": 11
+    },
+    {
+      "ref": 53,
+      "grade": "Grade 5",
+      "name": "Rates and charges",
+      "description": null,
+      "level": 7,
+      "scheduled_week": 13
+    },
+    {
+      "ref": 54,
+      "grade": "Grade 5",
+      "name": "Algebra",
+      "description": null,
+      "level": 8,
+      "scheduled_week": 15
+    },
+    {
+      "ref": 55,
+      "grade": "Grade 5",
+      "name": "Equations (5th grade)",
+      "description": null,
+      "level": 9,
+      "scheduled_week": 17
+    },
+    {
+      "ref": 56,
+      "grade": "Grade 5",
+      "name": "Inequalities",
+      "description": null,
+      "level": 10,
+      "scheduled_week": 19
+    },
+    {
+      "ref": 57,
+      "grade": "Grade 5",
+      "name": "Perimeter (5th grade)",
+      "description": null,
+      "level": 11,
+      "scheduled_week": 21
+    },
+    {
+      "ref": 58,
+      "grade": "Grade 5",
+      "name": "Area (5th grade)",
+      "description": null,
+      "level": 12,
+      "scheduled_week": 23
+    },
+    {
+      "ref": 59,
+      "grade": "Grade 5",
+      "name": "Time and time intervals",
+      "description": null,
+      "level": 13,
+      "scheduled_week": 25
+    },
+    {
+      "ref": 60,
+      "grade": "Grade 5",
+      "name": "Averages",
+      "description": null,
+      "level": 14,
+      "scheduled_week": 27
+    },
+    {
+      "ref": 61,
+      "grade": "Grade 6",
+      "name": "Multiplication of decimal fractions",
+      "description": null,
+      "level": 1,
+      "scheduled_week": 1
+    },
+    {
+      "ref": 62,
+      "grade": "Grade 6",
+      "name": "Division of decimal fractions",
+      "description": null,
+      "level": 2,
+      "scheduled_week": 4
+    },
+    {
+      "ref": 63,
+      "grade": "Grade 6",
+      "name": "Profit and loss per cent",
+      "description": null,
+      "level": 3,
+      "scheduled_week": 7
+    },
+    {
+      "ref": 64,
+      "grade": "Grade 6",
+      "name": "Increase and decrease in percentages",
+      "description": null,
+      "level": 4,
+      "scheduled_week": 10
+    },
+    {
+      "ref": 65,
+      "grade": "Grade 6",
+      "name": "Ratio and proportion",
+      "description": null,
+      "level": 5,
+      "scheduled_week": 13
+    },
+    {
+      "ref": 66,
+      "grade": "Grade 6",
+      "name": "Rates and charges (6th grade)",
+      "description": null,
+      "level": 6,
+      "scheduled_week": 16
+    },
+    {
+      "ref": 67,
+      "grade": "Grade 6",
+      "name": "Equations (6th grade)",
+      "description": null,
+      "level": 7,
+      "scheduled_week": 19
+    },
+    {
+      "ref": 68,
+      "grade": "Grade 6",
+      "name": "Constructing parallel and perpendicular lines",
+      "description": null,
+      "level": 8,
+      "scheduled_week": 22
+    },
+    {
+      "ref": 69,
+      "grade": "Grade 6",
+      "name": "Constructing plane shapes",
+      "description": null,
+      "level": 9,
+      "scheduled_week": 25
+    },
+    {
+      "ref": 70,
+      "grade": "Grade 6",
+      "name": "Area (6th grade)",
+      "description": null,
+      "level": 10,
+      "scheduled_week": 28
+    },
+    {
+      "ref": 71,
+      "grade": "Grade 6",
+      "name": "Volume (6th grade)",
+      "description": null,
+      "level": 11,
+      "scheduled_week": 31
+    },
+    {
+      "ref": 72,
+      "grade": "Grade 6",
+      "name": "Everyday statistics (6th grade)",
+      "description": null,
+      "level": 12,
+      "scheduled_week": 34
+    }
+  ],
+  "edges": [
+    {
+      "skill": 2,
+      "prerequisite": 1
+    },
+    {
+      "skill": 3,
+      "prerequisite": 1
+    },
+    {
+      "skill": 4,
+      "prerequisite": 1
+    },
+    {
+      "skill": 5,
+      "prerequisite": 1
+    },
+    {
+      "skill": 5,
+      "prerequisite": 4
+    },
+    {
+      "skill": 6,
+      "prerequisite": 1
+    },
+    {
+      "skill": 6,
+      "prerequisite": 5
+    },
+    {
+      "skill": 7,
+      "prerequisite": 6
+    },
+    {
+      "skill": 8,
+      "prerequisite": 6
+    },
+    {
+      "skill": 8,
+      "prerequisite": 7
+    },
+    {
+      "skill": 10,
+      "prerequisite": 2
+    },
+    {
+      "skill": 12,
+      "prerequisite": 3
+    },
+    {
+      "skill": 12,
+      "prerequisite": 5
+    },
+    {
+      "skill": 13,
+      "prerequisite": 2
+    },
+    {
+      "skill": 13,
+      "prerequisite": 12
+    },
+    {
+      "skill": 14,
+      "prerequisite": 6
+    },
+    {
+      "skill": 14,
+      "prerequisite": 7
+    },
+    {
+      "skill": 14,
+      "prerequisite": 12
+    },
+    {
+      "skill": 15,
+      "prerequisite": 14
+    },
+    {
+      "skill": 16,
+      "prerequisite": 5
+    },
+    {
+      "skill": 17,
+      "prerequisite": 8
+    },
+    {
+      "skill": 17,
+      "prerequisite": 14
+    },
+    {
+      "skill": 18,
+      "prerequisite": 10
+    },
+    {
+      "skill": 18,
+      "prerequisite": 14
+    },
+    {
+      "skill": 19,
+      "prerequisite": 11
+    },
+    {
+      "skill": 20,
+      "prerequisite": 4
+    },
+    {
+      "skill": 21,
+      "prerequisite": 12
+    },
+    {
+      "skill": 22,
+      "prerequisite": 14
+    },
+    {
+      "skill": 22,
+      "prerequisite": 21
+    },
+    {
+      "skill": 23,
+      "prerequisite": 16
+    },
+    {
+      "skill": 23,
+      "prerequisite": 26
+    },
+    {
+      "skill": 24,
+      "prerequisite": 12
+    },
+    {
+      "skill": 24,
+      "prerequisite": 21
+    },
+    {
+      "skill": 25,
+      "prerequisite": 15
+    },
+    {
+      "skill": 26,
+      "prerequisite": 25
+    },
+    {
+      "skill": 27,
+      "prerequisite": 22
+    },
+    {
+      "skill": 28,
+      "prerequisite": 2
+    },
+    {
+      "skill": 28,
+      "prerequisite": 22
+    },
+    {
+      "skill": 29,
+      "prerequisite": 9
+    },
+    {
+      "skill": 30,
+      "prerequisite": 18
+    },
+    {
+      "skill": 31,
+      "prerequisite": 2
+    },
+    {
+      "skill": 32,
+      "prerequisite": 2
+    },
+    {
+      "skill": 33,
+      "prerequisite": 19
+    },
+    {
+      "skill": 34,
+      "prerequisite": 20
+    },
+    {
+      "skill": 35,
+      "prerequisite": 24
+    },
+    {
+      "skill": 36,
+      "prerequisite": 22
+    },
+    {
+      "skill": 37,
+      "prerequisite": 25
+    },
+    {
+      "skill": 37,
+      "prerequisite": 26
+    },
+    {
+      "skill": 38,
+      "prerequisite": 23
+    },
+    {
+      "skill": 39,
+      "prerequisite": 35
+    },
+    {
+      "skill": 39,
+      "prerequisite": 38
+    },
+    {
+      "skill": 40,
+      "prerequisite": 27
+    },
+    {
+      "skill": 40,
+      "prerequisite": 39
+    },
+    {
+      "skill": 41,
+      "prerequisite": 36
+    },
+    {
+      "skill": 41,
+      "prerequisite": 37
+    },
+    {
+      "skill": 42,
+      "prerequisite": 29
+    },
+    {
+      "skill": 43,
+      "prerequisite": 29
+    },
+    {
+      "skill": 43,
+      "prerequisite": 30
+    },
+    {
+      "skill": 43,
+      "prerequisite": 37
+    },
+    {
+      "skill": 44,
+      "prerequisite": 32
+    },
+    {
+      "skill": 45,
+      "prerequisite": 33
+    },
+    {
+      "skill": 46,
+      "prerequisite": 34
+    },
+    {
+      "skill": 47,
+      "prerequisite": 35
+    },
+    {
+      "skill": 47,
+      "prerequisite": 39
+    },
+    {
+      "skill": 48,
+      "prerequisite": 36
+    },
+    {
+      "skill": 49,
+      "prerequisite": 38
+    },
+    {
+      "skill": 49,
+      "prerequisite": 39
+    },
+    {
+      "skill": 50,
+      "prerequisite": 49
+    },
+    {
+      "skill": 51,
+      "prerequisite": 37
+    },
+    {
+      "skill": 51,
+      "prerequisite": 49
+    },
+    {
+      "skill": 52,
+      "prerequisite": 37
+    },
+    {
+      "skill": 52,
+      "prerequisite": 49
+    },
+    {
+      "skill": 53,
+      "prerequisite": 51
+    },
+    {
+      "skill": 53,
+      "prerequisite": 52
+    },
+    {
+      "skill": 54,
+      "prerequisite": 41
+    },
+    {
+      "skill": 55,
+      "prerequisite": 54
+    },
+    {
+      "skill": 56,
+      "prerequisite": 55
+    },
+    {
+      "skill": 57,
+      "prerequisite": 43
+    },
+    {
+      "skill": 57,
+      "prerequisite": 49
+    },
+    {
+      "skill": 58,
+      "prerequisite": 43
+    },
+    {
+      "skill": 58,
+      "prerequisite": 51
+    },
+    {
+      "skill": 59,
+      "prerequisite": 45
+    },
+    {
+      "skill": 59,
+      "prerequisite": 48
+    },
+    {
+      "skill": 60,
+      "prerequisite": 48
+    },
+    {
+      "skill": 60,
+      "prerequisite": 52
+    },
+    {
+      "skill": 61,
+      "prerequisite": 47
+    },
+    {
+      "skill": 61,
+      "prerequisite": 51
+    },
+    {
+      "skill": 62,
+      "prerequisite": 47
+    },
+    {
+      "skill": 62,
+      "prerequisite": 52
+    },
+    {
+      "skill": 63,
+      "prerequisite": 50
+    },
+    {
+      "skill": 64,
+      "prerequisite": 63
+    },
+    {
+      "skill": 65,
+      "prerequisite": 49
+    },
+    {
+      "skill": 65,
+      "prerequisite": 51
+    },
+    {
+      "skill": 66,
+      "prerequisite": 53
+    },
+    {
+      "skill": 66,
+      "prerequisite": 65
+    },
+    {
+      "skill": 67,
+      "prerequisite": 55
+    },
+    {
+      "skill": 68,
+      "prerequisite": 42
+    },
+    {
+      "skill": 69,
+      "prerequisite": 42
+    },
+    {
+      "skill": 69,
+      "prerequisite": 68
+    },
+    {
+      "skill": 70,
+      "prerequisite": 58
+    },
+    {
+      "skill": 70,
+      "prerequisite": 69
+    },
+    {
+      "skill": 71,
+      "prerequisite": 61
+    },
+    {
+      "skill": 71,
+      "prerequisite": 70
+    },
+    {
+      "skill": 72,
+      "prerequisite": 46
+    },
+    {
+      "skill": 72,
+      "prerequisite": 60
+    }
+  ],
+  "maps": [
+    {
+      "ref": 1,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "708d0550f7cf58b49344fd07f8273952",
+      "content_id": "a973b96308c053f781bdcb51ec3563b2",
+      "kind": "exercise",
+      "title": "Count with small numbers",
+      "display_order": 1
+    },
+    {
+      "ref": 2,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "9f21778dbfb75ce38577cf0f15fd911c",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Count in order",
+      "display_order": 2
+    },
+    {
+      "ref": 3,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "6b29d3daec8158adad47da70f9941d9e",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Find 1 more or 1 less than a number",
+      "display_order": 3
+    },
+    {
+      "ref": 4,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "8271f67bdb7f51ecba8d5ce84b4d9901",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Compare numbers of objects 1",
+      "display_order": 1
+    },
+    {
+      "ref": 5,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "ad439d58b19d5b9b80192b1671c7673a",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Comparing numbers to 10",
+      "display_order": 2
+    },
+    {
+      "ref": 6,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "4e26c1c645d555eda3544905b1d133ab",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Compare numbers of objects 2",
+      "display_order": 3
+    },
+    {
+      "ref": 7,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "a3051465e50e5e29ba172b7ed391ac95",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Missing numbers",
+      "display_order": 1
+    },
+    {
+      "ref": 8,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "a2c6c17acd105e4ea6b93b748ebded84",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Numbers to 100",
+      "display_order": 2
+    },
+    {
+      "ref": 9,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "0dd0475484295001aa4caae9f0fb0700",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Count in pictures",
+      "display_order": 1
+    },
+    {
+      "ref": 10,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "90abd85a413d59e4b64a14e64fe216e0",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Count objects 1",
+      "display_order": 2
+    },
+    {
+      "ref": 11,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "1b687c798592569db5504db211ab0939",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Count objects 2",
+      "display_order": 3
+    },
+    {
+      "ref": 12,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "746401c93c995dddb176903936245b6c",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Teen numbers",
+      "display_order": 1
+    },
+    {
+      "ref": 13,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "a34bdeb048b452a2ade3843c2f613efc",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Count tens",
+      "display_order": 2
+    },
+    {
+      "ref": 14,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "3ccb4b990b875c868442700536377400",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Groups of ten objects",
+      "display_order": 3
+    },
+    {
+      "ref": 15,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "064f66598a21501e8667de338da47f04",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Tens and ones",
+      "display_order": 4
+    },
+    {
+      "ref": 16,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "40394f1ccd315c079cde7960b9f4e71e",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Add within 5",
+      "display_order": 1
+    },
+    {
+      "ref": 17,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "8a7dff207d6c528bbc856fae573c6c43",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Add within 10",
+      "display_order": 2
+    },
+    {
+      "ref": 18,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "9ca5b9c06cbf5da28a1138353d2bf9b4",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Making 5",
+      "display_order": 3
+    },
+    {
+      "ref": 19,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "706b2e7ffaf65ebc8f88e22cff74ef3c",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Make 10",
+      "display_order": 4
+    },
+    {
+      "ref": 20,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "d806f5cda7c859b6b0c9159c7bc8a1f2",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Subtract within 5",
+      "display_order": 1
+    },
+    {
+      "ref": 21,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "a7863fba89b35e2d9cc6f3862b99e027",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Subtract within 10",
+      "display_order": 2
+    },
+    {
+      "ref": 22,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "56205414f5e059e69d19ed4ed4caf0d8",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Addition word problems within 10",
+      "display_order": 1
+    },
+    {
+      "ref": 23,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "118419015695569cabb559269621da57",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Subtraction word problems within 10",
+      "display_order": 2
+    },
+    {
+      "ref": 24,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "8275a9c2496456109d07b342d3d855a9",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Name shapes 1",
+      "display_order": 1
+    },
+    {
+      "ref": 25,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "408b6258f7f75f12858c620330e1bfd4",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Name shapes 2",
+      "display_order": 2
+    },
+    {
+      "ref": 26,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "3f7c6673d77657f7935dbe2d8e6c33e8",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Compare size",
+      "display_order": 1
+    },
+    {
+      "ref": 27,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "2bae4cf2fac752ccac4f4de27d56e464",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Compare length",
+      "display_order": 2
+    },
+    {
+      "ref": 28,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "9ff4fb85ddce56d98b27671209c3254d",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Tell time to hour or half hour",
+      "display_order": 1
+    },
+    {
+      "ref": 29,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "1c0d768b95525123834aac5378343254",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Numbers to 120",
+      "display_order": 1
+    },
+    {
+      "ref": 30,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "3488b73e47a9554f81a85937327700f0",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "2-digit place value challenge",
+      "display_order": 2
+    },
+    {
+      "ref": 31,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "3d4060bf6fa75ac78f6e6f631c955033",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Place value blocks within 1,000",
+      "display_order": 3
+    },
+    {
+      "ref": 32,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "2564918388fd5fe5857647ac55ef9be5",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Identify the value of a digit (ones, tens, hundreds)",
+      "display_order": 4
+    },
+    {
+      "ref": 33,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "ce4d368bf521522a915cb2703b3d159a",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Compare 2-digit numbers",
+      "display_order": 1
+    },
+    {
+      "ref": 34,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "5593725c39b85e00802970c2ce91daf0",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Compare 2-digit numbers 2",
+      "display_order": 2
+    },
+    {
+      "ref": 35,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "7d7b436573355742a9feb08f9519e415",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Skip-count by 5s",
+      "display_order": 3
+    },
+    {
+      "ref": 36,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "66b657cc80cb56c59ce1620b71507dad",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Skip-count by 10s",
+      "display_order": 4
+    },
+    {
+      "ref": 37,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "a277c638c65a55f3b098b471a10b48bb",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Add within 20",
+      "display_order": 1
+    },
+    {
+      "ref": 38,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "9063df5219705fb3bdfa4a7fd7daee9f",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Subtract within 20",
+      "display_order": 2
+    },
+    {
+      "ref": 39,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "0796be8a774a5f0cb0e4e3bf5a57d7ba",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Add within 100 using place value blocks",
+      "display_order": 3
+    },
+    {
+      "ref": 40,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "5e0a7afa0db15f0e92578c1a09d7cab9",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Subtract within 100 using place value blocks",
+      "display_order": 4
+    },
+    {
+      "ref": 41,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "a46c6f5ee02f5b3492f2e1bbc6ef89cb",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Adding with arrays",
+      "display_order": 1
+    },
+    {
+      "ref": 42,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "64ea741a5c1a59c39bdc709d9bf745e2",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Array word problems",
+      "display_order": 2
+    },
+    {
+      "ref": 43,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "31f1529a9a44525b8f65060013a32c55",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Halves",
+      "display_order": 1
+    },
+    {
+      "ref": 44,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "b2cdf5ac2b4051698c977ca4bf95296f",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Fourths",
+      "display_order": 2
+    },
+    {
+      "ref": 45,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "3be8b57ac2fd5fd1afd6033204d3379d",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Equal sign",
+      "display_order": 1
+    },
+    {
+      "ref": 46,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "10a9bae46fd052e89c0d55a755f86984",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Find missing number (add and subtract within 20)",
+      "display_order": 2
+    },
+    {
+      "ref": 47,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "4157b586938252eea3732a6c127458f7",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Order by length",
+      "display_order": 1
+    },
+    {
+      "ref": 48,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "6bdfa7b8549f5bf1801ccd8a874d42a9",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Units of length (cm, m)",
+      "display_order": 2
+    },
+    {
+      "ref": 49,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "40c40a078a855a60a0d43180fd6c5a15",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Measure lengths (cm, m)",
+      "display_order": 3
+    },
+    {
+      "ref": 50,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "9938f259f5155a23a9f00e796b06aed2",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Telling time on a number line",
+      "display_order": 1
+    },
+    {
+      "ref": 51,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "47cc371e4f755d1c913cbab8a9ea7adf",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Telling time on a clock",
+      "display_order": 2
+    },
+    {
+      "ref": 52,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "f94aee98a78d5af095310a2b52a826ec",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Make picture graphs",
+      "display_order": 1
+    },
+    {
+      "ref": 53,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "7e3e4ec40c7f58c5ab259f40fdedb591",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Solve problems with picture graphs",
+      "display_order": 2
+    },
+    {
+      "ref": 54,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "8793b19e1bf45cb1959f0e78de9037d1",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Write numbers in number and expanded form",
+      "display_order": 1
+    },
+    {
+      "ref": 55,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "58358f44cb8b500fa9e7a3f861c03552",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Write numbers in different forms",
+      "display_order": 2
+    },
+    {
+      "ref": 56,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "5c0259095efe5af7ab839792cbd97588",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Hundreds, tens, and ones",
+      "display_order": 3
+    },
+    {
+      "ref": 57,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "fb6a1203469558abbb20325dc932cbba",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Add using groups of 10 and 100",
+      "display_order": 1
+    },
+    {
+      "ref": 58,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "5dfab46f68e75aa98a1e9b6539ebc84d",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Break apart 3-digit addition problems",
+      "display_order": 2
+    },
+    {
+      "ref": 59,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "ca3be62fbf675b9194a033f77709ef3a",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Subtract within 1,000 using place value blocks",
+      "display_order": 3
+    },
+    {
+      "ref": 60,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "13626e4ce8f653e1b5e27811b3fc0c06",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Addition word problems within 100",
+      "display_order": 4
+    },
+    {
+      "ref": 61,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "dc64cf52f15d5c87b7ded2d34d6ad206",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Subtraction word problems within 100",
+      "display_order": 5
+    },
+    {
+      "ref": 62,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "63fcecddd4d65425a7d33e07fd23bd86",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Recognize fractions greater than 1",
+      "display_order": 1
+    },
+    {
+      "ref": 63,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "48b358c518ba589c84fb584d1c85352b",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Ordering small negative numbers",
+      "display_order": 2
+    },
+    {
+      "ref": 64,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "9cac6c7a73e750deac852cc0bd2dfd9b",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Identify shapes",
+      "display_order": 3
+    },
+    {
+      "ref": 65,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "6350301da3ff516aa25e8cbf53bef839",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Writing expressions with variables",
+      "display_order": 4
+    },
+    {
+      "ref": 66,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "fd1a2032117456d9be7ecd82cc94e614",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Regroup whole numbers",
+      "display_order": 1
+    },
+    {
+      "ref": 67,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "1617d86d19d75028b6e40aba019aeca0",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Compare 3-digit numbers",
+      "display_order": 2
+    },
+    {
+      "ref": 68,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "5874e70e4d3d56ae9ddabb13c7268519",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Write decimals and fractions greater than 1 shown on number lines",
+      "display_order": 1
+    },
+    {
+      "ref": 69,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "b8f14ad976cf54e086692b427802620d",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Make line plots",
+      "display_order": 2
+    },
+    {
+      "ref": 70,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "69cb3db0deee51a49a048046bf6d5b88",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Visualize distributive property",
+      "display_order": 3
+    },
+    {
+      "ref": 71,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "de1e0b7ca433574293436d352d85af9e",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Interpret multiplying fraction and whole number word problems",
+      "display_order": 4
+    },
+    {
+      "ref": 72,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "483e90d1a66b5e7fbc5b42981a130f7c",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Volume of rectangular prisms",
+      "display_order": 5
+    },
+    {
+      "ref": 73,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "6963cfbad5aa5abcae5b1d683c4940ed",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Adding decimals < 1 (hundredths)",
+      "display_order": 6
+    },
+    {
+      "ref": 74,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "77f51a31469b562e8dde6a61cb55151b",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Round decimals word problems",
+      "display_order": 1
+    },
+    {
+      "ref": 75,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "4b496ec8c102500ebd9a5c6bec488e1a",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Multiply and divide by 10",
+      "display_order": 2
+    },
+    {
+      "ref": 76,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "a5d1df0bf08f561d9a3d2a233f3bd4a7",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Compare rational numbers",
+      "display_order": 3
+    },
+    {
+      "ref": 77,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "29c6b2bb104d54c69527130b2b470916",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Estimate mass (grams and kilograms)",
+      "display_order": 4
+    },
+    {
+      "ref": 78,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "ed4516e9a5845859901cb9bbe4ff2786",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Multiply 2-digits by 1-digit with area models",
+      "display_order": 5
+    },
+    {
+      "ref": 79,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "2de70d69854d547a8bc16e3f3b7f7453",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Identify the value of US coins and dollars",
+      "display_order": 1
+    },
+    {
+      "ref": 80,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "b9a34c4ea6ab5523921f9c21a8c069e1",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Count money (U.S.)",
+      "display_order": 2
+    },
+    {
+      "ref": 81,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "70bc63ae1aba5f4898249c80d14989b0",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Money word problems (U.S.)",
+      "display_order": 3
+    },
+    {
+      "ref": 82,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "3a4d47a9f4b8551aae3f6ebf40ddfde4",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Round decimals using a number line",
+      "display_order": 1
+    },
+    {
+      "ref": 83,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "40883365bdeb5c21a14826366e31b7ef",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Patterns in multiplication tables",
+      "display_order": 1
+    },
+    {
+      "ref": 84,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "30da899462de5dfa84f1490dc809e1f2",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Add decimals visually",
+      "display_order": 2
+    },
+    {
+      "ref": 85,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "eae07f4685e75020beeb963519cdc017",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Units of length (inch, ft)",
+      "display_order": 1
+    },
+    {
+      "ref": 86,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "736eb65d98ab50beb928a8dd7d4ce14b",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Measure length in different units",
+      "display_order": 2
+    },
+    {
+      "ref": 87,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "9cbb0dbdd5205822a14516bfb8463fda",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Graphs of rules that relate 2 variables",
+      "display_order": 1
+    },
+    {
+      "ref": 88,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "784a3e0d273155fa8cb54d083b5775ec",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Quadrilateral types",
+      "display_order": 1
+    },
+    {
+      "ref": 89,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "deedd94fe6935f5595060f1f83d91ed0",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Cut shapes into equal parts",
+      "display_order": 1
+    },
+    {
+      "ref": 90,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "397c6f8e007b5c3191d903b9b7aeea70",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Fractions as division",
+      "display_order": 2
+    },
+    {
+      "ref": 91,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "62f3a066054f5443a0fd46c8bfc76151",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Estimate center using dot plots",
+      "display_order": 1
+    },
+    {
+      "ref": 92,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "91040ae8e3fa59d09d36e0afcc1e35b0",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Volume as area of base times height",
+      "display_order": 2
+    },
+    {
+      "ref": 93,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "7d75e31d948a5bd2b211290aa2ae538e",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Round to nearest 10 or 100",
+      "display_order": 1
+    },
+    {
+      "ref": 94,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "506cacac01cd5c839889153b6ba58737",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Equivalent fractions (denominators 10 & 100)",
+      "display_order": 2
+    },
+    {
+      "ref": 95,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "2677e915c7485d2ea6e2efcfa0220c3c",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Create picture graphs (picture more than 1)",
+      "display_order": 3
+    },
+    {
+      "ref": 96,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "8f73c1717d6d5893b9844dc9eae1c107",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Area and perimeter word problems",
+      "display_order": 4
+    },
+    {
+      "ref": 97,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "4cd48c58e196547f8f95655cfe407067",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Comparing rates",
+      "display_order": 1
+    },
+    {
+      "ref": 98,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "d4f03a4235ec5ff5a90ff72291f7c861",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Analyze shapes",
+      "display_order": 2
+    },
+    {
+      "ref": 99,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "d991959371db55c196bb02d795a3c079",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Write whole numbers in different forms",
+      "display_order": 3
+    },
+    {
+      "ref": 100,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "930d33a2834558639c3a545a61430ca3",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Convert to smaller units (in, ft, yd, & mi)",
+      "display_order": 1
+    },
+    {
+      "ref": 101,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "8a4d1b387fa45693b0d445bb7c3d1fce",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Multi-digit multiplication",
+      "display_order": 2
+    },
+    {
+      "ref": 102,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "6ff1c18ceca65ee4beff85939677af8c",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Fractions of different wholes",
+      "display_order": 3
+    },
+    {
+      "ref": 103,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "7d02771b6bc2530286f4eb7aa03f58a8",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Division with arrays",
+      "display_order": 4
+    },
+    {
+      "ref": 104,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "d255ea4b35585df4a7751630da709f13",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Break apart 3-digit addition problems",
+      "display_order": 1
+    },
+    {
+      "ref": 105,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "b034aa77c7cd5d398e9512a59df266f7",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Estimate volume (milliliters and liters)",
+      "display_order": 2
+    },
+    {
+      "ref": 106,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "cbfc0384d9d5509e8bc475a7a2dc4d6b",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Divide by 1-digit numbers with area models",
+      "display_order": 3
+    },
+    {
+      "ref": 107,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "9802d95abfe55db58dcd998bf06b159f",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Area of composite shapes",
+      "display_order": 4
+    },
+    {
+      "ref": 108,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "85c53c7c335c5b9290056f9117129db2",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Decompose fractions visually",
+      "display_order": 5
+    },
+    {
+      "ref": 109,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "d89f14f8d3be590d81561d45ab027377",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Divide decimals by whole numbers visually",
+      "display_order": 1
+    },
+    {
+      "ref": 110,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "901668958f935719bc479e29e4cd9c98",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Decimals on the number line: tenths",
+      "display_order": 2
+    },
+    {
+      "ref": 111,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "75938cec1a155c5ca63c273cc46253d9",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Effects of shifting, adding, & removing a data point",
+      "display_order": 3
+    },
+    {
+      "ref": 112,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "5b10101f22e459cc9c4de2a1f107583f",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Find perimeter when a side length is missing",
+      "display_order": 1
+    },
+    {
+      "ref": 113,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "5ea5ff70d3d6551fa50afa1b72ad4cd8",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Unit rates",
+      "display_order": 1
+    },
+    {
+      "ref": 114,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "a1bc0eb0f22e5ff688dc68732120d83e",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Multi-digit subtraction",
+      "display_order": 2
+    },
+    {
+      "ref": 115,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "a69d61c2788759bb96f4a003132c127a",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Negative symbol as opposite",
+      "display_order": 1
+    },
+    {
+      "ref": 116,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "a0c5e18b628e52d1b4c3c79972cbf45c",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Multiply 2-digits by 1-digit with distributive property",
+      "display_order": 2
+    },
+    {
+      "ref": 117,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "d2b6ce871df951c7b976e4a5b44e7d55",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Understand equal groups as multiplication",
+      "display_order": 3
+    },
+    {
+      "ref": 118,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "5fd3cbc4c821517e8ed5575925e20cdc",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Find missing length when given area of a triangle",
+      "display_order": 1
+    },
+    {
+      "ref": 119,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "60b08e4bdc6a50a59b83b23b05decdcc",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Benchmark angles",
+      "display_order": 2
+    },
+    {
+      "ref": 120,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "a9dfccbbf13d587ea9e76bfebe6518be",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Compare area with unit squares",
+      "display_order": 3
+    },
+    {
+      "ref": 121,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "be9ba8a179ec59e2b686bde5bc54789a",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Represent 2-step word problems with equations",
+      "display_order": 4
+    },
+    {
+      "ref": 122,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "5f23687f18ec5702b5bda36a8b7706f3",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Negative fractions on the number line",
+      "display_order": 1
+    },
+    {
+      "ref": 123,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "b3c4138d6f195771a9ed54dc4b86f448",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Graph points",
+      "display_order": 1
+    },
+    {
+      "ref": 124,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "572b99c9030859f68b623096b7bcecd0",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Interpret fraction division",
+      "display_order": 2
+    },
+    {
+      "ref": 125,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "910deb1578b65524a2d97dabb108f41b",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Compare fractions with the same numerator or denominator",
+      "display_order": 2
+    },
+    {
+      "ref": 126,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "697f3ad28fb65c6faa8912dda9cf7186",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Mean absolute deviation (MAD)",
+      "display_order": 1
+    },
+    {
+      "ref": 127,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "4ddca9830fbd55629fabfec0cab93ada",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Evaluating expressions with variables word problems",
+      "display_order": 2
+    },
+    {
+      "ref": 128,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "a516810c38a95fc2b3599660982f94b0",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Estimate mass (grams and kilograms)",
+      "display_order": 3
+    },
+    {
+      "ref": 129,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "8780110c096f52b29fc42ce3181d5974",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Rules that relate 2 variables",
+      "display_order": 1
+    },
+    {
+      "ref": 130,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "8e7d8deaa9835b0c9783575bc487d703",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Identify quadrilaterals",
+      "display_order": 2
+    },
+    {
+      "ref": 131,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "bf57f04803675125af662db5e06e15e4",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Basic division",
+      "display_order": 3
+    },
+    {
+      "ref": 132,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "5c6cce933007587c8c8960edf84dc9a3",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Select strategies for subtracting within 1000",
+      "display_order": 1
+    },
+    {
+      "ref": 133,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "cddd0dc20a6a5f83aaf06f8661823a22",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Classify triangles by both sides and angles",
+      "display_order": 2
+    },
+    {
+      "ref": 134,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "6f82ae2d91ea5bceb11c527285a50c4e",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Multiplying fractions with visuals",
+      "display_order": 3
+    },
+    {
+      "ref": 135,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "cc2fff1810375c618d72cadb8920c4d9",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Identify geometric solids (3D shapes)",
+      "display_order": 4
+    },
+    {
+      "ref": 136,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "c602a594a6055f2bba518a744b9a0a8e",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Estimate products (1-digit times 2, 3, and 4-digit)",
+      "display_order": 5
+    },
+    {
+      "ref": 137,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "08db9a0c6c77597583d7682671e0cd6d",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Multiply by taking out factors of 10",
+      "display_order": 1
+    },
+    {
+      "ref": 138,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "1fbe2f6d21ef5e3eba010ad0a8dce3e6",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Finding percents",
+      "display_order": 2
+    },
+    {
+      "ref": 139,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "f60df569e6e15a02be8ec85226d0941e",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Round decimals",
+      "display_order": 3
+    },
+    {
+      "ref": 140,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "a72e1c62653b585095a2603f7dfe4524",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Multiply unit fractions and whole numbers",
+      "display_order": 1
+    },
+    {
+      "ref": 141,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "c4cf2e590fb055bf8cd36e6376e5189c",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Volume of rectangular prisms with unit cubes",
+      "display_order": 2
+    },
+    {
+      "ref": 142,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "5ebb9ec26be455b3a425746c36a813f6",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Write decimals and fractions greater than 1 shown on grids",
+      "display_order": 3
+    },
+    {
+      "ref": 143,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "569402bcf2885c9ba2fd0860057e5d1b",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Dividing decimals: hundredths",
+      "display_order": 1
+    },
+    {
+      "ref": 144,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "ab77317e05c35b669c51c115cc762a24",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Tell time on the number line",
+      "display_order": 2
+    },
+    {
+      "ref": 145,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "75a00fe2d2de510bbdd4873b30768a5e",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Estimate to add multi-digit whole numbers",
+      "display_order": 3
+    },
+    {
+      "ref": 146,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "696de82740e1575688b86a41852fd2c1",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Negative numbers on the number line",
+      "display_order": 1
+    },
+    {
+      "ref": 147,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "dbe7deaae09654a7a01e7937c9c4dfdf",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Multiplication in contexts",
+      "display_order": 2
+    },
+    {
+      "ref": 148,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "d5ece4bce5415a1f8ec04afdc407d698",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Convert to smaller units (oz and lb)",
+      "display_order": 1
+    },
+    {
+      "ref": 149,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "4c62457cdea15aa5adcf92475926557f",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Graph data on line plots",
+      "display_order": 2
+    },
+    {
+      "ref": 150,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "ee047695d71557f6872b9e0851b4be96",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Analyze shapes by angles",
+      "display_order": 1
+    },
+    {
+      "ref": 151,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "5fd09093505b566bbc40a683fc37c2bd",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Time conversion word problems",
+      "display_order": 2
+    },
+    {
+      "ref": 152,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "b5538f41cf7d5c92b2d35d358a9da611",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Ratios and units of measurement",
+      "display_order": 1
+    },
+    {
+      "ref": 153,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "7baa64e0c943540dae1e3848ea83be5a",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Patterns with shapes",
+      "display_order": 2
+    },
+    {
+      "ref": 154,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "67f7bfff93af5741b198ca0762f39f49",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Decompose figures to find volume (unit cubes)",
+      "display_order": 1
+    },
+    {
+      "ref": 155,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "e448b0fb5d54529e9cfc9edd4afe8610",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Comparing data displays",
+      "display_order": 1
+    },
+    {
+      "ref": 156,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "77ceeb863a995639b452bff35c20899c",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Greatest common factor",
+      "display_order": 1
+    },
+    {
+      "ref": 157,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "8884a78278cb516696228a93d190382b",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Compare decimals word problems",
+      "display_order": 1
+    },
+    {
+      "ref": 158,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "748ba206141755fc9f316921fb42f7aa",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Volume word problems",
+      "display_order": 2
+    },
+    {
+      "ref": 159,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "9898e589f0d359b68c0673fa72cbbd4c",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Interpret dot plots with fraction operations",
+      "display_order": 1
+    },
+    {
+      "ref": 160,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "bb2db450c9365efcbe88ef4089695391",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Equivalent fractions",
+      "display_order": 2
+    },
+    {
+      "ref": 161,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "33d3021e405c5858a99b7c53f69003c2",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Identify value of a digit",
+      "display_order": 1
+    },
+    {
+      "ref": 162,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "f30e6e736aa85bb8af0fcc18614d9f97",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Represent the commutative property of multiplication",
+      "display_order": 2
+    },
+    {
+      "ref": 163,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "e231636949b8555e8c053d06cb79571a",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Find area by counting unit squares",
+      "display_order": 2
+    },
+    {
+      "ref": 164,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "8a1589e8e7e95d11a82fdfaf940b16f5",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Read picture graphs",
+      "display_order": 1
+    },
+    {
+      "ref": 165,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "b892f0eb7c0e583f84e5a12680436e5e",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Divide by 1",
+      "display_order": 2
+    },
+    {
+      "ref": 166,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "30b29d219f30518b8b85d48fd32fcf0e",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Order of operations",
+      "display_order": 3
+    },
+    {
+      "ref": 167,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "4923d6e866de5996b9990020b82415ba",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Multiply and divide by powers of 10",
+      "display_order": 3
+    },
+    {
+      "ref": 168,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "9edf6e8afc095fe9ba3bc57871d87d1f",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Convert units word problems (metrics)",
+      "display_order": 2
+    },
+    {
+      "ref": 169,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "a0ef275ffba85669907582ba1ae3ad71",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Multiply by 8",
+      "display_order": 3
+    },
+    {
+      "ref": 170,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "afa5272e9161556d8533af711d99ecb9",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Subtract decimals < 1 (hundredths)",
+      "display_order": 1
+    },
+    {
+      "ref": 171,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "fe8606f027d55021832456f82cb35907",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Quadrilateral problems on the coordinate plane",
+      "display_order": 2
+    },
+    {
+      "ref": 172,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "135e8cf3e2bc5722a0f75476bd8c685b",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Equivalent ratio word problems",
+      "display_order": 1
+    },
+    {
+      "ref": 173,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "6789091b69125af0854b489a838f968f",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Writing basic expressions with variables",
+      "display_order": 2
+    },
+    {
+      "ref": 174,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "9394900beec456219fbb56e31a56c4f1",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Relate fractions to 1",
+      "display_order": 1
+    },
+    {
+      "ref": 175,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "50cec4dd646d50ca9d8b3cb24c77f993",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Graph data on line plots (through 1/8 of a unit)",
+      "display_order": 2
+    },
+    {
+      "ref": 176,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "7507ef740bc35b578dd3d0b85945e2cb",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Round to nearest 10 or 100 on the number line",
+      "display_order": 2
+    },
+    {
+      "ref": 177,
+      "channel_id": "c9d7f950ab6b5a1199e3d6c10d7f0103",
+      "node_id": "ac339d7f1a94558987e1e8021b360ff6",
+      "content_id": null,
+      "kind": "exercise",
+      "title": "Multiply by 4",
+      "display_order": 3
+    }
+  ],
+  "skill_content": [
+    {
+      "skill": 1,
+      "map": 1,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 1,
+      "map": 2,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 1,
+      "map": 3,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 2,
+      "map": 4,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 2,
+      "map": 5,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 2,
+      "map": 6,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 3,
+      "map": 7,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 3,
+      "map": 8,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 4,
+      "map": 9,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 4,
+      "map": 10,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 4,
+      "map": 11,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 5,
+      "map": 12,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 5,
+      "map": 13,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 5,
+      "map": 14,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 5,
+      "map": 15,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 6,
+      "map": 16,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 6,
+      "map": 17,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 6,
+      "map": 18,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 6,
+      "map": 19,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 7,
+      "map": 20,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 7,
+      "map": 21,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 8,
+      "map": 22,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 8,
+      "map": 23,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 9,
+      "map": 24,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 9,
+      "map": 25,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 10,
+      "map": 26,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 10,
+      "map": 27,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 11,
+      "map": 28,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 12,
+      "map": 29,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 12,
+      "map": 30,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 12,
+      "map": 31,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 12,
+      "map": 32,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 13,
+      "map": 33,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 13,
+      "map": 34,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 13,
+      "map": 35,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 13,
+      "map": 36,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 14,
+      "map": 37,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 14,
+      "map": 38,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 14,
+      "map": 39,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 14,
+      "map": 40,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 15,
+      "map": 41,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 15,
+      "map": 42,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 16,
+      "map": 43,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 16,
+      "map": 44,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 17,
+      "map": 45,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 17,
+      "map": 46,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 18,
+      "map": 47,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 18,
+      "map": 48,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 18,
+      "map": 49,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 19,
+      "map": 50,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 19,
+      "map": 51,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 20,
+      "map": 52,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 20,
+      "map": 53,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 21,
+      "map": 54,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 21,
+      "map": 55,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 21,
+      "map": 56,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 22,
+      "map": 57,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 22,
+      "map": 58,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 22,
+      "map": 59,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 22,
+      "map": 60,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 22,
+      "map": 61,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 23,
+      "map": 62,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 23,
+      "map": 63,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 23,
+      "map": 64,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 23,
+      "map": 65,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 24,
+      "map": 66,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 24,
+      "map": 67,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 25,
+      "map": 68,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 25,
+      "map": 69,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 25,
+      "map": 70,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 25,
+      "map": 71,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 25,
+      "map": 72,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 25,
+      "map": 73,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 26,
+      "map": 74,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 26,
+      "map": 75,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 26,
+      "map": 76,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 26,
+      "map": 77,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 26,
+      "map": 78,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 27,
+      "map": 79,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 27,
+      "map": 80,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 27,
+      "map": 81,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 28,
+      "map": 82,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 29,
+      "map": 83,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 29,
+      "map": 84,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 30,
+      "map": 85,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 30,
+      "map": 86,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 31,
+      "map": 87,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 32,
+      "map": 88,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 33,
+      "map": 89,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 33,
+      "map": 90,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 34,
+      "map": 91,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 34,
+      "map": 92,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 35,
+      "map": 93,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 35,
+      "map": 94,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 35,
+      "map": 95,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 35,
+      "map": 96,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 36,
+      "map": 97,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 36,
+      "map": 98,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 36,
+      "map": 99,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 37,
+      "map": 100,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 37,
+      "map": 101,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 37,
+      "map": 102,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 37,
+      "map": 103,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 38,
+      "map": 104,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 38,
+      "map": 105,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 38,
+      "map": 106,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 38,
+      "map": 107,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 38,
+      "map": 108,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 39,
+      "map": 109,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 39,
+      "map": 110,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 39,
+      "map": 111,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 40,
+      "map": 112,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 41,
+      "map": 113,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 41,
+      "map": 114,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 42,
+      "map": 115,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 42,
+      "map": 116,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 42,
+      "map": 117,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 43,
+      "map": 118,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 43,
+      "map": 119,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 43,
+      "map": 120,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 43,
+      "map": 121,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 44,
+      "map": 122,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 45,
+      "map": 123,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 45,
+      "map": 124,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 46,
+      "map": 91,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 46,
+      "map": 125,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 47,
+      "map": 126,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 47,
+      "map": 127,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 47,
+      "map": 128,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 48,
+      "map": 129,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 48,
+      "map": 130,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 48,
+      "map": 131,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 49,
+      "map": 132,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 49,
+      "map": 133,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 49,
+      "map": 134,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 49,
+      "map": 135,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 49,
+      "map": 136,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 50,
+      "map": 137,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 50,
+      "map": 138,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 50,
+      "map": 139,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 51,
+      "map": 140,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 51,
+      "map": 141,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 51,
+      "map": 142,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 52,
+      "map": 143,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 52,
+      "map": 144,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 52,
+      "map": 145,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 53,
+      "map": 146,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 53,
+      "map": 147,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 54,
+      "map": 148,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 54,
+      "map": 149,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 55,
+      "map": 150,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 55,
+      "map": 151,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 56,
+      "map": 152,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 56,
+      "map": 153,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 57,
+      "map": 154,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 58,
+      "map": 155,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 59,
+      "map": 156,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 60,
+      "map": 157,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 60,
+      "map": 158,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 61,
+      "map": 159,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 61,
+      "map": 160,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 62,
+      "map": 161,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 62,
+      "map": 162,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 63,
+      "map": 139,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 63,
+      "map": 163,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 64,
+      "map": 163,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 65,
+      "map": 164,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 65,
+      "map": 165,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 65,
+      "map": 166,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 66,
+      "map": 146,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 66,
+      "map": 147,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 66,
+      "map": 167,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 67,
+      "map": 151,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 67,
+      "map": 168,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 67,
+      "map": 169,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 68,
+      "map": 170,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 68,
+      "map": 171,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 69,
+      "map": 172,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 69,
+      "map": 173,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 70,
+      "map": 174,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 70,
+      "map": 175,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 71,
+      "map": 155,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 71,
+      "map": 176,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 72,
+      "map": 157,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 72,
+      "map": 158,
+      "role": "practice",
+      "approved": true
+    },
+    {
+      "skill": 72,
+      "map": 177,
+      "role": "practice",
+      "approved": true
+    }
+  ]
+}
