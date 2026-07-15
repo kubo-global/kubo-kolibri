@@ -179,6 +179,42 @@ reachable *from the KUBO server*: it can stay bound to localhost and never needs
 to be exposed publicly — true on a classroom Pi, and true when KUBO itself sits
 on the public internet (e.g. a hosted demo).
 
+```
+  Browser                     KUBO (Laravel)              Kolibri (Django,
+  (pupil already              + kubo-kolibri              bound to localhost —
+   signed into KUBO)                                       never public)
+      │                            │                            │
+      │  GET /learn/exercise/42    │                            │
+      ├───────────────────────────>                            │
+      │                            │  POST /api/auth/session/   │
+      │                            │  username + password       │
+      │                            │  derived from the secret   │  ← browser never
+      │                            ├───────────────────────────>│    sees a Kolibri
+      │                            │     Set-Cookie: kolibri=…   │    password
+      │                            │<───────────────────────────┤
+      │  200, Set-Cookie:          │                            │
+      │  kolibri=… ;               │  (KUBO hands the browser   │
+      │  Path=/kolibri-proxy/ ;    │   only this cookie, scoped │
+      │  HttpOnly                  │   to the proxy path)       │
+      │<───────────────────────────                            │
+      │                            │                            │
+      │  GET /kolibri-proxy/…      │                            │
+      │  Cookie: kolibri=…         │  forwards ONLY Kolibri     │
+      ├───────────────────────────>  cookies, host pinned      │
+      │   (KUBO auth required)     │  (no admin creds, no       │
+      │                            │   KUBO session, SSRF-      │
+      │                            │   guarded)                 │
+      │                            ├───────────────────────────>│
+      │                            │      exercise HTML / JS    │
+      │        content             │<───────────────────────────┤
+      │<───────────────────────────                            │
+```
+
+The pupil acts as their own Kolibri learner, with learner-only privileges. The
+proxy route is behind KUBO's own auth; it forwards only Kolibri's cookies (never
+KUBO's session or an admin credential) and pins every request to the Kolibri
+host, so a crafted sub-path can't be turned into a request to somewhere else.
+
 To verify that the curriculum mappings stored in KUBO still resolve to
 content that lives in the local Kolibri (catches missing channels or
 nodes after a backup/restore or partial import):
