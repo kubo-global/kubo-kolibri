@@ -145,6 +145,40 @@ install without manual setup-wizard steps.
 
 `--dry-run` shows what the repair script would do without writing anything.
 
+### Mirror the school into Kolibri
+
+Kolibri needs its own classrooms and learner accounts before a pupil can open an
+exercise. `kolibri:provision` creates them from KUBO's roster:
+
+```
+php artisan kolibri:provision [--schoolyear=<id>] [--all] [--dry-run]
+```
+
+For the current school year (or the one you pass), it provisions the facility,
+one Kolibri classroom per class, and one learner per enrolled pupil, and writes
+the resulting Kolibri ids back onto the KUBO records (`kolibri_facility_id`,
+`kolibri_classroom_id`, `kolibri_user_id`). Learner passwords are derived from
+`KOLIBRI_LEARNER_SECRET`, so KUBO can open a pupil's Kolibri session server-side
+without ever storing one.
+
+It is idempotent, and safe to re-run against a Kolibri that already holds some of
+this: a classroom is matched by name and a learner by username *before* either is
+created. So a re-provision — after restoring a KUBO backup onto a Kolibri that
+was left in place, say — reuses the existing accounts instead of failing on
+Kolibri's duplicate-name rejection (which, because provisioning a class aborts
+when its classroom can't be made, would otherwise silently link no learners at
+all). `--dry-run` reports what it would create without writing.
+
+### How a pupil reaches the content
+
+A pupil's browser never talks to Kolibri directly. When a pupil opens an
+exercise, KUBO establishes their Kolibri session server-side (with the derived
+password above) and serves the content back through its own reverse proxy at
+`/kolibri-proxy/…`, same-origin with the rest of KUBO. So Kolibri only has to be
+reachable *from the KUBO server*: it can stay bound to localhost and never needs
+to be exposed publicly — true on a classroom Pi, and true when KUBO itself sits
+on the public internet (e.g. a hosted demo).
+
 To verify that the curriculum mappings stored in KUBO still resolve to
 content that lives in the local Kolibri (catches missing channels or
 nodes after a backup/restore or partial import):
