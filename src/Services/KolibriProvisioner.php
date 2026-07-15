@@ -60,7 +60,11 @@ class KolibriProvisioner
             $name .= ' ' . $offering->schoolyear->name;
         }
 
-        $classroom = $this->client->createClassroom($facilityId, $name);
+        // Reuse the classroom if it's already in the facility — Kolibri rejects a
+        // duplicate name, so without this a re-provision (KUBO database reset but
+        // Kolibri not) would fail here and provision no learners.
+        $classroom = $this->client->findClassroomByName($facilityId, $name)
+            ?? $this->client->createClassroom($facilityId, $name);
         if (!$classroom || empty($classroom['id'])) {
             return null;
         }

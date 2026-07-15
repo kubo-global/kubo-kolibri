@@ -209,6 +209,17 @@ class KolibriClient
         ]);
     }
 
+    /**
+     * An existing classroom in the facility by exact name, or null. Lets the
+     * provisioner reuse a classroom instead of failing on Kolibri's duplicate-name
+     * rejection when the KUBO database was reset but Kolibri was not.
+     */
+    public function findClassroomByName(string $facilityId, string $name): ?array
+    {
+        return $this->get('/api/auth/classroom/', ['parent' => $facilityId])
+            ->firstWhere('name', $name);
+    }
+
     public function createLearner(string $facilityId, string $username, string $fullName, string $password): ?array
     {
         return $this->post('/api/auth/facilityuser/', [
