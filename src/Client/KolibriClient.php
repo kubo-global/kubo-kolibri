@@ -113,6 +113,96 @@ class KolibriClient
         return $session ? ['kolibri' => $session, 'kolibri_csrftoken' => $csrf] : null;
     }
 
+    /**
+     * Record a completed exercise attempt in Kolibri, as the learner, through the
+     * supported progress-tracking API — the same endpoint Kolibri's own frontend
+     * uses. Drives a session start and one update carrying $correct correct and
+     * $wrong incorrect interactions, so the resulting attempt/summary/mastery logs
+     * are real and readable back through fetchExerciseScore.
+     *
+     * This is for seeding and integration tests — a way to put genuine Kolibri
+     * progress in place without a human solving Perseus by hand — not a production
+     * teaching path. Returns false on any Kolibri error so callers can fall back.
+     *
+     * @param  array{kolibri: string, kolibri_csrftoken: ?string}  $session  a learner session from openSession()
+     * @param  array{type: string, n?: int, m?: int}  $masteryModel  the node's assessmentmetadata mastery_model
+     * @param  string[]  $itemIds  the node's assessment_item_ids
+     */
+    public function recordExerciseCompletion(
+        array $session,
+        string $nodeId,
+        string $contentId,
+        string $channelId,
+        array $masteryModel,
+        array $itemIds,
+        int $correct,
+        int $wrong = 0,
+    ): bool {
+        if (empty($session['kolibri']) || count($itemIds) < ($correct + $wrong)) {
+            return false;
+        }
+
+        $http = new Client([
+            'base_uri' => $this->baseUrl,
+            'timeout' => 15,
+            'connect_timeout' => 5,
+            'http_errors' => false,
+        ]);
+        $headers = [
+            'Cookie' => "kolibri={$session['kolibri']}; kolibri_csrftoken={$session['kolibri_csrftoken']}",
+            'X-CSRFToken' => $session['kolibri_csrftoken'],
+            'Referer' => $this->baseUrl.'/',
+        ];
+
+        try {
+            $start = $http->post('/api/logger/trackprogress/', [
+                'headers' => $headers,
+                'json' => [
+                    'node_id' => $nodeId,
+                    'content_id' => $contentId,
+                    'channel_id' => $channelId,
+                    'kind' => 'exercise',
+                    'mastery_model' => $masteryModel,
+                ],
+            ]);
+            if ($start->getStatusCode() !== 200) {
+                return false;
+            }
+            $sessionId = json_decode($start->getBody()->getContents(), true)['session_id'] ?? null;
+            if (! $sessionId) {
+                return false;
+            }
+
+            $interactions = [];
+            $items = array_values($itemIds);
+            for ($i = 0; $i < $correct + $wrong; $i++) {
+                $isCorrect = $i < $correct;
+                $interactions[] = [
+                    'item' => $items[$i],
+                    'correct' => $isCorrect ? 1.0 : 0.0,
+                    'complete' => true,
+                    'time_spent' => 8.0,
+                    'answer' => ['seeded' => true],
+                ];
+            }
+
+            $update = $http->put("/api/logger/trackprogress/{$sessionId}/", [
+                'headers' => $headers,
+                'json' => [
+                    'progress' => 1.0,
+                    'time_spent_delta' => (float) (($correct + $wrong) * 10),
+                    'interactions' => $interactions,
+                ],
+            ]);
+
+            return $update->getStatusCode() === 200;
+        } catch (GuzzleException $e) {
+            $this->logFailure('record exercise completion', $e);
+
+            return false;
+        }
+    }
+
     // =========================================================================
     // Channels
     // =========================================================================
