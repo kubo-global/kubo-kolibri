@@ -173,10 +173,14 @@ class KolibriClient
                 return false;
             }
 
+            // Wrong answers first, correct ones last: an "m of n" mastery model looks
+            // at the most recent n attempts, so the run only completes if the tail is
+            // correct. This lets a caller ask for a sub-100% score and still master.
             $interactions = [];
             $items = array_values($itemIds);
-            for ($i = 0; $i < $correct + $wrong; $i++) {
-                $isCorrect = $i < $correct;
+            $total = $correct + $wrong;
+            for ($i = 0; $i < $total; $i++) {
+                $isCorrect = $i >= $wrong;
                 $interactions[] = [
                     'item' => $items[$i],
                     'correct' => $isCorrect ? 1.0 : 0.0,
