@@ -56,6 +56,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Delegated learner sessions
+    |--------------------------------------------------------------------------
+    |
+    | With the kolibri-delegated-session plugin enabled in Kolibri, KUBO asks
+    | Kolibri for a learner's session as the admin above, and no longer needs
+    | the learner's password to open an exercise. Turn this on once the plugin
+    | is installed (see kolibri-plugin/README.md). If Kolibri does not answer,
+    | KUBO falls back to the derived password and logs a warning.
+    |
+    */
+    'delegated_session' => (bool) env('KOLIBRI_DELEGATED_SESSION', false),
+
+    /*
+    |--------------------------------------------------------------------------
     | Progress Sync Interval
     |--------------------------------------------------------------------------
     |

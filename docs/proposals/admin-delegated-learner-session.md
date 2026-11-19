@@ -3,6 +3,12 @@
 *Status: request for comment, addressed to Learning Equality. Written from the
 kubo-kolibri bridge, but the primitive it asks for is not KUBO-specific.*
 
+*Update: the endpoint sketched below now exists as a Kolibri plugin,
+[`kolibri-plugin/`](../../kolibri-plugin/README.md), built on the plugin API and
+tested against Kolibri 0.19.5. It shows the shape we have in mind and lets us run
+without the password workaround. What a plugin cannot give is a session narrowed
+to content playback; that part still needs Kolibri itself.*
+
 ## Summary
 
 We would like a supported way for a trusted server-side integration, holding
