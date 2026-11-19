@@ -114,6 +114,24 @@ class KolibriClient
     }
 
     /**
+     * Ask Kolibri for a session that belongs to a learner, as the admin this
+     * client is signed in as, without knowing the learner's password. Needs the
+     * kolibri-delegated-session plugin (kolibri-plugin/ in this repo) enabled in
+     * Kolibri. The client's own (admin) session is untouched.
+     *
+     * @return array{kolibri: string, kolibri_csrftoken: ?string}|null  null when the plugin is absent or refuses
+     */
+    public function openDelegatedSession(string $kolibriUserId): ?array
+    {
+        $minted = $this->post('/delegated-session/api/session/', ['user' => $kolibriUserId]);
+        $session = $minted['session']['value'] ?? null;
+
+        return $session
+            ? ['kolibri' => $session, 'kolibri_csrftoken' => $minted['csrf']['token'] ?? null]
+            : null;
+    }
+
+    /**
      * Record a completed exercise attempt in Kolibri, as the learner, through the
      * supported progress-tracking API — the same endpoint Kolibri's own frontend
      * uses. Drives a session start and one update carrying $correct correct and

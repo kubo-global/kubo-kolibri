@@ -210,6 +210,13 @@ on the public internet (e.g. a hosted demo).
       │<───────────────────────────                            │
 ```
 
+**Without the derived password.** With the `kolibri-delegated-session` plugin
+enabled in Kolibri (see [`kolibri-plugin/`](kolibri-plugin/README.md)) and
+`KOLIBRI_DELEGATED_SESSION=true` in KUBO's `.env`, KUBO asks Kolibri for the
+pupil's session as the admin instead of logging in with a derived password. The
+rest of the flow above is unchanged. If Kolibri does not answer, KUBO falls back
+to the derived password and logs a warning.
+
 The pupil acts as their own Kolibri learner, with learner-only privileges. The
 proxy route is behind KUBO's own auth; it forwards only Kolibri's cookies (never
 KUBO's session or an admin credential) and pins every request to the Kolibri

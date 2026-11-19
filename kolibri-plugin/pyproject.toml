@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kolibri-delegated-session"
+version = "0.1.0"
+description = "Kolibri plugin: a facility admin mints a session for a learner, without knowing the learner's password"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.6"
+dependencies = []
+
+[tool.setuptools]
+packages = ["kolibri_delegated_session"]

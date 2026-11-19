@@ -52,11 +52,7 @@ class KolibriSessionBridge
             }
 
             if ($user->kolibri_user_id) {
-                $session = $this->client->openSession(
-                    $this->provisioner->kolibriUsername($user),
-                    $this->provisioner->kolibriPassword($user),
-                    $facilityId,
-                );
+                $session = $this->openLearnerSession($user, $facilityId);
                 if (!$session) {
                     Log::warning('Kolibri learner session could not be established server-side', ['user_id' => $user->id]);
                 }
@@ -72,6 +68,30 @@ class KolibriSessionBridge
             'ssoReady' => (bool) $session,
             'cookieHeaders' => $session ? $this->sessionCookieHeaders($session) : [],
         ];
+    }
+
+    /**
+     * The learner's Kolibri session: asked from Kolibri as the admin when the
+     * delegated-session plugin is in use, otherwise by logging in with the
+     * password derived from the shared secret.
+     *
+     * @return array{kolibri: string, kolibri_csrftoken: ?string}|null
+     */
+    private function openLearnerSession(User $user, string $facilityId): ?array
+    {
+        if (config('kubo-kolibri.delegated_session')) {
+            $session = $this->client->openDelegatedSession($user->kolibri_user_id);
+            if ($session) {
+                return $session;
+            }
+            Log::warning('Kolibri delegated session unavailable, falling back to the derived password', ['user_id' => $user->id]);
+        }
+
+        return $this->client->openSession(
+            $this->provisioner->kolibriUsername($user),
+            $this->provisioner->kolibriPassword($user),
+            $facilityId,
+        );
     }
 
     /**
